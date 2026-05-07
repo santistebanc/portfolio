@@ -34,8 +34,90 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Deco Pattern ──────────────────────────────────────────── */
+.deco-pattern {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 680px;
+  height: 680px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 100% 0%, black 0%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 75% at 100% 0%, black 0%, transparent 100%);
+}
+
+.deco-inner {
+  width: 114%;
+  height: 110%;
+  text-align: center;
+  margin: -10% -14%;
+  overflow: hidden;
+}
+
+.flat3d {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin-left: 40px;
+  margin-bottom: 52px;
+  background: rgba(212, 146, 10, 0.055);
+  border-radius: 3px;
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+  transform: translateY(50%) skewY(33deg) scaleY(1.1);
+}
+
+.flat3d::before {
+  content: "";
+  position: fixed;
+  top: -1px;
+  left: 40px;
+  width: 36px;
+  height: 36px;
+  background: rgba(212, 146, 10, 0.032);
+  border-radius: 14px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transform: skewY(-50deg) translateX(0%) translateY(-60%);
+}
+
+.flat3d::after {
+  content: "";
+  position: fixed;
+  top: -3px;
+  left: 38px;
+  width: 36px;
+  height: 36px;
+  background: rgba(212, 146, 10, 0.08);
+  border-radius: 14px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transform: translateY(-109%) skewX(-40deg) translateX(-50%) scaleY(1.19);
+}
+
+.flat3d span {
+  content: "";
+  position: fixed;
+  top: 34px;
+  left: 78px;
+  width: 36px;
+  height: 36px;
+  background: rgba(212, 146, 10, 0.08);
+  border-radius: 14px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transform: translateY(-109%) skewX(-40deg) translateX(-50%) scaleY(1.19);
+}
+
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   padding: 80px 56px 100px;
   display: grid;
