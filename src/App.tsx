@@ -4,10 +4,12 @@ import About from './components/About'
 import Skills from './components/Skills'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import DecoPattern from './components/DecoPattern'
 
 export default function App() {
   return (
     <>
+      <DecoPattern />
       <main>
         <Hero />
         <Work />
