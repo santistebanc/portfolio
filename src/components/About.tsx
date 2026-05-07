@@ -1,4 +1,20 @@
+import { useState } from 'react'
 import { experience } from '../data/projects'
+import { companyLogos } from './companyLogos'
+
+function CompanyLogo({ company, logoUrl }: { company: string; logoUrl?: string }) {
+  const [failed, setFailed] = useState(false)
+
+  if (companyLogos[company]) return companyLogos[company]
+
+  if (logoUrl && !failed) {
+    return (
+      <img className="exp-logo" src={logoUrl} alt={company} onError={() => setFailed(true)} />
+    )
+  }
+
+  return <div className="exp-logo exp-logo-fallback">{company[0]}</div>
+}
 
 export default function About() {
   return (
@@ -32,9 +48,12 @@ export default function About() {
         <div className="experience-list">
           {experience.map((e) => (
             <div key={e.company} className="exp-item">
-              <div className="exp-company">{e.company}</div>
-              <div className="exp-role">{e.role}</div>
-              <div className="exp-period">{e.period}</div>
+              <CompanyLogo company={e.company} logoUrl={e.logoUrl} />
+              <div className="exp-info">
+                <div className="exp-company">{e.company}</div>
+                <div className="exp-role">{e.role}</div>
+                <div className="exp-period">{e.period}</div>
+              </div>
             </div>
           ))}
         </div>

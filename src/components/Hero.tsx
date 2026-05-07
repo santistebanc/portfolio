@@ -13,6 +13,7 @@ export default function Hero() {
         </p>
         <div className="hero-actions">
           <a href="#work" className="btn btn-primary">See my work →</a>
+          <a href="/Carlos_Santisteban_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Download CV ↓</a>
           <a href="mailto:carlos.santisteban@outlook.com" className="btn btn-ghost">Get in touch</a>
         </div>
         <div className="hero-stats">
@@ -42,8 +43,8 @@ export default function Hero() {
             <span className="cmt">// my stack</span><br />
             <span className="kw">const</span> <span className="fn">carlos</span> = {'{'}<br />
             &nbsp;&nbsp;frontend: [<span className="str">"React"</span>, <span className="str">"TypeScript"</span>],<br />
-            &nbsp;&nbsp;backend: [<span className="str">"Node.js"</span>, <span className="str">"Hono"</span>],<br />
-            &nbsp;&nbsp;tools: [<span className="str">"Vite"</span>, <span className="str">"Bun"</span>],<br />
+            &nbsp;&nbsp;backend: [<span className="str">"Node.js"</span>, <span className="str">"Redis"</span>],<br />
+            &nbsp;&nbsp;tools: [<span className="str">"Vite"</span>, <span className="str">"Claude Code"</span>],<br />
             &nbsp;&nbsp;realtime: [<span className="str">"PartyKit"</span>, <span className="str">"WS"</span>],<br />
             &nbsp;&nbsp;passion: <span className="str">"∞"</span><br />
             {'}'}

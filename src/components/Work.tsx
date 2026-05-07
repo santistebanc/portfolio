@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { featuredProject, projects, otherProjects, type GradClass } from '../data/projects'
+import { TechIcon } from './TechIcon'
 
 function CardImage({
   screenshot,
@@ -60,7 +61,7 @@ export default function Work() {
           <p className="featured-desc">{featuredProject.description}</p>
           <div className="tech-row">
             {featuredProject.tech.map((t) => (
-              <span key={t} className="tech-pill">{t}</span>
+              <span key={t} className="tech-pill"><TechIcon name={t} />{t}</span>
             ))}
           </div>
           <div className="project-links">
@@ -83,7 +84,7 @@ export default function Work() {
               <h3 className="card-title">{p.title}</h3>
               <p className="card-desc">{p.description}</p>
               <div className="card-tech">
-                {p.tech.map((t) => <span key={t}>{t}</span>)}
+                {p.tech.map((t) => <span key={t}><TechIcon name={t} />{t}</span>)}
               </div>
               <div className="card-links">
                 {p.liveUrl && (
@@ -109,7 +110,7 @@ export default function Work() {
               <div className="other-left">
                 <span className="other-name">{p.title}</span>
                 <div className="other-tech">
-                  {p.tech.map((t) => <span key={t}>{t}</span>)}
+                  {p.tech.map((t) => <span key={t}><TechIcon name={t} />{t}</span>)}
                 </div>
               </div>
               <p className="other-desc">{p.description}</p>
