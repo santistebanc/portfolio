@@ -1,4 +1,14 @@
 import { skills } from '../data/projects'
+import { TechIcon } from './TechIcon'
+
+function SkillTag({ tag }: { tag: string }) {
+  return (
+    <span className="skill-tag">
+      <TechIcon name={tag} />
+      {tag}
+    </span>
+  )
+}
 
 export default function Skills() {
   return (
@@ -13,7 +23,7 @@ export default function Skills() {
               <div className="skill-group-title">{group.title}</div>
               <div className="skill-tags">
                 {group.tags.map((tag) => (
-                  <span key={tag} className="skill-tag">{tag}</span>
+                  <SkillTag key={tag} tag={tag} />
                 ))}
               </div>
             </div>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Outfit:wght@400;500;600;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #181b2a;
   --surface: #1f2338;
@@ -392,6 +396,9 @@ body {
 }
 
 .tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--font-mono);
   font-size: 11.5px;
   padding: 6px 12px;
@@ -490,6 +497,9 @@ body {
 }
 
 .card-tech span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-family: var(--font-mono);
   font-size: 10.5px;
   padding: 3px 8px;
@@ -562,6 +572,9 @@ body {
 }
 
 .other-tech span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-family: var(--font-mono);
   font-size: 10.5px;
   padding: 2px 7px;
@@ -609,10 +622,39 @@ body {
 }
 
 .exp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
   padding: 22px 0 22px 28px;
   border-left: 2px solid var(--border);
   position: relative;
   transition: border-color 0.2s;
+}
+
+.exp-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.exp-logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
 }
 
 .exp-item:hover {
@@ -695,6 +737,9 @@ body {
 }
 
 .skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--font-mono);
   font-size: 12px;
   padding: 5px 11px;

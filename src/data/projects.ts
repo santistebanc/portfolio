@@ -27,7 +27,7 @@ export const featuredProject = {
   title: 'OV Berlin — Cinema Listings',
   description:
     'Browse every OV and OmU film playing in Berlin right now — showtimes, IMDb ratings, Rotten Tomatoes scores, trailers, and cinema maps. Data refreshes every 6 hours via GitHub Actions. PWA, installable, works offline.',
-  tech: ['React 19', 'TypeScript', 'Vite', 'Tailwind', 'Fuse.js', 'GitHub Actions'],
+  tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Fuse.js', 'GitHub Actions'],
   screenshot: 'https://raw.githubusercontent.com/santistebanc/berlin-cinema/main/docs/screenshot1.png',
   screenshotAlt: 'OV Berlin — cinema listings app',
   liveUrl: 'https://ovberlin.site',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     id: 'rankzap',
     title: 'RankZap',
     description: 'Real-time mobile-first ranked-voting. Drag to rank, submit, watch live tallies with Borda, Dowdall, and Copeland modes.',
-    tech: ['React 19', 'TypeScript', 'Vite 8', 'dnd-kit', 'Tailwind v4'],
+    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind'],
     screenshot: 'https://raw.githubusercontent.com/santistebanc/rankzap/main/public/rankzap-screenshot.png',
     screenshotAlt: 'Rankzap — ranked voting app',
     liveUrl: 'https://rankzap.site',
@@ -136,11 +136,11 @@ export const otherProjects: OtherProject[] = [
 export const skills = [
   {
     title: 'Frontend',
-    tags: ['React', 'TypeScript', 'JavaScript', 'Tailwind', 'Redux', 'Zustand', 'Vite', 'Next.js', 'CSS'],
+    tags: ['React', 'TypeScript', 'JavaScript', 'Tailwind', 'Zustand', 'Vite', 'Next.js', 'CSS'],
   },
   {
     title: 'Backend & Data',
-    tags: ['Node.js', 'PostgreSQL', 'GraphQL', 'tRPC', 'Prisma', 'Hono', 'Express', 'MongoDB', 'Redis'],
+    tags: ['Node.js', 'PostgreSQL', 'GraphQL', 'tRPC', 'Prisma', 'Hono', 'Express', 'Redis'],
   },
   {
     title: 'Realtime & Infra',
@@ -148,7 +148,7 @@ export const skills = [
   },
   {
     title: 'Tooling & Practice',
-    tags: ['Git', 'Cypress', 'Playwright', 'Jest', 'Storybook', 'Figma', 'Claude Code', 'Codex', 'Cursor', 'OpenCode', 'Sentry'],
+    tags: ['Git', 'Cypress', 'Playwright', 'Jest', 'Figma', 'Claude Code', 'Codex', 'Cursor', 'Sentry'],
   },
 ]
 
@@ -157,6 +157,7 @@ export const experience = [
     company: 'Lingoda',
     role: 'Software Engineer — Language learning platform',
     period: 'Jun 2021 – Mar 2025 · Berlin',
+    logoUrl: 'https://www.lingoda.com/favicon.ico',
   },
   {
     company: 'Quandoo',
