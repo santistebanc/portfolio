@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Santisteban — Fullstack Engineer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Outfit:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg: #181b2a;
+      --surface: #1f2338;
+      --surface-2: #262b42;
+      --fg: #c9d0ea;
+      --muted: #6e7899;
+      --border: #2b3050;
+      --accent: #d4920a;
+      --accent-hover: #b87a08;
+      --accent-soft: #1e160a;
+      --green: #6b8068;
+      --green-soft: #111a10;
+
+      --font-display: 'Space Grotesk', -apple-system, system-ui, sans-serif;
+      --font-body: 'Outfit', -apple-system, system-ui, sans-serif;
+      --font-mono: ui-monospace, 'Cascadia Code', Menlo, monospace;
+
+      --radius-sm: 0px;
+      --radius-md: 0px;
+      --radius-lg: 0px;
+      --radius-xl: 0px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ──────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      padding: 80px 56px 100px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero-name .line2 {
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      font-size: clamp(17px, 1.8vw, 20px);
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 44px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 15px 28px;
+      transition: all 0.25s;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .btn-ghost {
+      color: var(--fg);
+      border: 1.5px solid var(--border);
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+    }
+
+    .stat {
+      padding-left: 18px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 34px;
+      line-height: 1.1;
+      color: var(--fg);
+    }
+
+    .stat-unit {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+    }
+
+    .visual-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px;
+      transform: rotate(1.5deg);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .visual-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .visual-dot {
+      width: 12px; height: 12px;
+    }
+
+    .visual-dot:nth-child(1) { background: #ff5f57; }
+    .visual-dot:nth-child(2) { background: #ffbd2e; }
+    .visual-dot:nth-child(3) { background: #28ca41; }
+
+    .visual-code {
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    .visual-code .kw  { color: var(--accent); font-weight: 600; }
+    .visual-code .str { color: var(--green); }
+    .visual-code .cmt { color: var(--border); font-style: italic; }
+    .visual-code .fn  { color: #e57c3a; }
+
+    .visual-badge {
+      position: absolute;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 14px 22px;
+      font-weight: 600;
+      font-size: 14px;
+      bottom: -18px;
+      left: -24px;
+      transform: rotate(-3deg);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.85); }
+    }
+
+    /* ── Section ───────────────────────────────────────────────── */
+    .section {
+      padding: 100px 56px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .section-count {
+      font-family: var(--font-display);
+      font-size: 17px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Featured Project ──────────────────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      padding: 44px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .featured-image {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: var(--surface-2);
+      position: relative;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .featured-image-fallback {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, var(--accent) 0%, var(--accent-hover) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .featured-title {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .featured-desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .tech-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      padding: 6px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--fg);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Project Grid ──────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+      border-color: var(--accent);
+    }
+
+    .card-image {
+      height: 188px;
+      overflow: hidden;
+      background: var(--surface-2);
+      position: relative;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.5s;
+    }
+
+    .project-card:hover .card-image img {
+      transform: scale(1.03);
+    }
+
+    /* Gradient fallbacks for cards without screenshots */
+    .grad-1 { background: linear-gradient(135deg, #5457f5 0%, #3e41d6 100%); }
+    .grad-2 { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); }
+    .grad-3 { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); }
+    .grad-4 { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+
+    .grad-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    .card-body {
+      padding: 22px 24px 24px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .card-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+
+    .card-tech span {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 3px 8px;
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    .card-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .card-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .card-link:hover { opacity: 0.7; }
+
+    .card-link-gh {
+      color: var(--muted);
+    }
+
+    /* ── Other Projects ────────────────────────────────────────── */
+    .other-projects {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .other-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .other-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .other-item {
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      gap: 32px;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .other-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--fg);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .other-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .other-tech span {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 2px 7px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .other-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .other-links {
+      display: flex;
+      gap: 14px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .other-item { grid-template-columns: 1fr; gap: 10px; }
+      .other-links { margin-top: 4px; }
+    }
+
+    /* ── About ─────────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .about-text p strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-item {
+      padding: 22px 0 22px 28px;
+      border-left: 2px solid var(--border);
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .exp-item:hover {
+      border-left-color: var(--accent);
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 28px;
+      width: 8px; height: 8px;
+      background: var(--border);
+      transition: background 0.2s;
+    }
+
+    .exp-item:hover::before {
+      background: var(--accent);
+    }
+
+    .exp-company {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+
+    .exp-role {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .exp-period {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    /* ── Skills ────────────────────────────────────────────────── */
+    .skills-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 0;
+      padding: 80px 56px;
+    }
+
+    .skills-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .skill-group {
+      background: var(--surface);
+      padding: 28px 24px;
+    }
+
+    .skill-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 5px 11px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* ── CTA ───────────────────────────────────────────────────── */
+    .cta-wrapper {
+      padding: 80px 56px 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .cta {
+      padding: 72px 80px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .cta-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 46px);
+      font-weight: 400;
+      color: var(--fg);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .cta-content h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .cta-content p {
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .cta-action {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 18px 36px;
+      text-decoration: none;
+      transition: all 0.25s;
+      font-family: var(--font-body);
+    }
+
+    .cta-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    }
+
+    .cta-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .cta-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .cta-link:hover { color: var(--fg); }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    footer {
+      padding: 36px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--fg); }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 64px 28px 72px; gap: 48px; }
+      .hero-visual { max-width: 440px; }
+      .section { padding: 72px 28px; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .featured { grid-template-columns: 1fr; padding: 28px; gap: 32px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cta { grid-template-columns: 1fr; padding: 48px 32px; }
+      .cta-action { align-items: flex-start; }
+      .cta-wrapper { padding: 0 28px 64px; }
+      .skills-section { padding: 64px 28px; }
+      footer { padding: 28px; flex-direction: column; gap: 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { display: none; }
+      .hero-name { font-size: 44px; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      .hero-actions { flex-direction: column; }
+      .btn { justify-content: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- ── Hero ── -->
+    <section class="hero" id="hero">
+      <div class="hero-text">
+        <h1 class="hero-name">
+          Carlos<br>
+          <span class="line2">Santisteban</span>
+        </h1>
+        <p class="hero-tagline">
+          Fullstack engineer with a frontend focus. 8+ years building performant,
+          accessible, good-looking web applications with React and TypeScript —
+          and a genuine passion for the craft.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">See my work →</a>
+          <a href="mailto:carlos.santisteban@outlook.com" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">8 <span class="stat-unit">Years</span></div>
+            <div class="stat-label">professional work</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">15 <span class="stat-unit">Years</span></div>
+            <div class="stat-label">hobby development</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2 <span class="stat-unit">Years</span></div>
+            <div class="stat-label">AI engineering</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card">
+          <div class="visual-header">
+            <span class="visual-dot"></span>
+            <span class="visual-dot"></span>
+            <span class="visual-dot"></span>
+          </div>
+          <div class="visual-code">
+            <span class="cmt">// my stack</span><br>
+            <span class="kw">const</span> <span class="fn">carlos</span> = {<br>
+            &nbsp;&nbsp;frontend: [<span class="str">"React"</span>, <span class="str">"TypeScript"</span>],<br>
+            &nbsp;&nbsp;backend: [<span class="str">"Node.js"</span>, <span class="str">"Hono"</span>],<br>
+            &nbsp;&nbsp;tools: [<span class="str">"Vite"</span>, <span class="str">"Bun"</span>],<br>
+            &nbsp;&nbsp;realtime: [<span class="str">"PartyKit"</span>, <span class="str">"WS"</span>],<br>
+            &nbsp;&nbsp;passion: <span class="str">"∞"</span><br>
+            }
+          </div>
+        </div>
+        <div class="visual-badge">Open to work ✦</div>
+      </div>
+    </section>
+
+    <!-- ── Work ── -->
+    <section class="section" id="work">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">Projects I'm <em>proud</em> of</h2>
+        </div>
+      </div>
+
+      <!-- Featured -->
+      <article class="featured">
+        <div class="featured-image">
+          <img
+            src="https://raw.githubusercontent.com/santistebanc/berlin-cinema/main/docs/screenshot1.png"
+            alt="OV Berlin — cinema listings app"
+            onerror="this.parentNode.innerHTML='<div class=\'featured-image-fallback\'>OV Berlin</div>'"
+          >
+        </div>
+        <div class="featured-content">
+          <span class="featured-badge">★ Featured</span>
+          <h3 class="featured-title">OV Berlin — Cinema Listings</h3>
+          <p class="featured-desc">
+            Browse every OV and OmU film playing in Berlin right now — showtimes, IMDb ratings,
+            Rotten Tomatoes scores, trailers, and cinema maps. Data refreshes every 6 hours
+            via GitHub Actions. PWA, installable, works offline.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">React 19</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">Vite</span>
+            <span class="tech-pill">Tailwind</span>
+            <span class="tech-pill">Fuse.js</span>
+            <span class="tech-pill">GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a href="https://ovberlin.site" target="_blank" rel="noopener" class="btn btn-primary">Live app →</a>
+            <a href="https://github.com/santistebanc/berlin-cinema" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Grid -->
+      <div class="projects-grid">
+
+        <!-- rankzap -->
+        <article class="project-card">
+          <div class="card-image">
+            <img
+              src="https://raw.githubusercontent.com/santistebanc/rankzap/main/public/rankzap-screenshot.png"
+              alt="Rankzap — ranked voting app"
+              onerror="this.style.display='none'; this.parentNode.classList.add('grad-1'); this.parentNode.innerHTML+='<div class=\'grad-label\'>rankzap</div>'"
+            >
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">RankZap</h3>
+            <p class="card-desc">Real-time mobile-first ranked-voting. Drag to rank, submit, watch live tallies with Borda, Dowdall, and Copeland modes.</p>
+            <div class="card-tech">
+              <span>React 19</span><span>TypeScript</span><span>Vite 8</span><span>dnd-kit</span><span>Tailwind v4</span>
+            </div>
+            <div class="card-links">
+              <a href="https://rankzap.site" target="_blank" rel="noopener" class="card-link">Live →</a>
+              <a href="https://github.com/santistebanc/rankzap" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- flyscan -->
+        <article class="project-card">
+          <div class="card-image">
+            <img
+              src="https://raw.githubusercontent.com/santistebanc/flyscan/master/docs/screenshots/app.png"
+              alt="Flyscan — flight comparison"
+              onerror="this.style.display='none'; this.parentNode.classList.add('grad-2'); this.parentNode.innerHTML+='<div class=\'grad-label\'>flyscan</div>'"
+            >
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Flyscan</h3>
+            <p class="card-desc">Flight comparison tool scraping Skyscanner and Kiwi simultaneously. Filter by price, duration, stops, and inspect full itinerary timelines.</p>
+            <div class="card-tech">
+              <span>React</span><span>Bun</span><span>Vite</span><span>Hono</span><span>TypeScript</span>
+            </div>
+            <div class="card-links">
+              <a href="https://flyscan.site" target="_blank" rel="noopener" class="card-link">Live →</a>
+              <a href="https://github.com/santistebanc/flyscan" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- snapquiz -->
+        <article class="project-card">
+          <div class="card-image">
+            <img
+              src="https://raw.githubusercontent.com/santistebanc/snapquiz/main/docs/screenshot.png"
+              alt="SnapQuiz — multiplayer quiz"
+              onerror="this.style.display='none'; this.parentNode.classList.add('grad-3'); this.parentNode.innerHTML+='<div class=\'grad-label\'>snapquiz</div>'"
+            >
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SnapQuiz</h3>
+            <p class="card-desc">Real-time multiplayer quiz for groups on a TV screen. Players buzz in, answer by voice or tap. AI generates questions from any topic.</p>
+            <div class="card-tech">
+              <span>React</span><span>TypeScript</span><span>PartyKit</span><span>OpenAI</span>
+            </div>
+            <div class="card-links">
+              <a href="https://snapquiz.fun/" target="_blank" rel="noopener" class="card-link">Live →</a>
+              <a href="https://github.com/santistebanc/snapquiz" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- treem -->
+        <article class="project-card">
+          <div class="card-image">
+            <img
+              src="https://raw.githubusercontent.com/santistebanc/treem/main/Treem.png"
+              alt="Treem — state management library"
+              onerror="this.style.display='none'; this.parentNode.classList.add('grad-1'); this.parentNode.innerHTML+='<div class=\'grad-label\'>treem</div>'"
+            >
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Treem</h3>
+            <p class="card-desc">Declarative state management library. Describe your app as a plain object tree — state, derived values, actions — then call run() to get a live interface.</p>
+            <div class="card-tech">
+              <span>TypeScript</span><span>Library</span><span>Reactive</span>
+            </div>
+            <div class="card-links">
+              <a href="https://santistebanc.github.io/treem/" target="_blank" rel="noopener" class="card-link">Examples →</a>
+              <a href="https://github.com/santistebanc/treem" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- minitanks -->
+        <article class="project-card">
+          <div class="card-image">
+            <img
+              src="https://raw.githubusercontent.com/santistebanc/minitanks/master/assets/demo-screenshot.png"
+              alt="MiniTanks — browser game"
+              onerror="this.style.display='none'; this.parentNode.classList.add('grad-4'); this.parentNode.innerHTML+='<div class=\'grad-label\'>minitanks</div>'"
+            >
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">MiniTanks</h3>
+            <p class="card-desc">Classic Flash tank game resurrected in the browser via Ruffle — no plugin required. Survive enemy waves, collect crates, use cover.</p>
+            <div class="card-tech">
+              <span>Ruffle</span><span>HTML5</span><span>Vite</span>
+            </div>
+            <div class="card-links">
+              <a href="https://santistebanc.github.io/miniTanks/" target="_blank" rel="noopener" class="card-link">Play →</a>
+              <a href="https://github.com/santistebanc/minitanks" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- minigames -->
+        <article class="project-card">
+          <div class="card-image">
+            <img
+              src="https://raw.githubusercontent.com/santistebanc/minigames/master/assets/screenshot1.png"
+              alt="Minigames — mobile arcade"
+              onerror="this.style.display='none'; this.parentNode.classList.add('grad-2'); this.parentNode.innerHTML+='<div class=\'grad-label\'>minigames</div>'"
+            >
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Minigames</h3>
+            <p class="card-desc">Fast-paced mobile arcade built with Phaser.js. Each run drops you into rotating 10-second challenges — survive, react, score.</p>
+            <div class="card-tech">
+              <span>Phaser.js</span><span>JavaScript</span><span>Mobile</span>
+            </div>
+            <div class="card-links">
+              <a href="https://santistebanc.github.io/minigames/" target="_blank" rel="noopener" class="card-link">Play →</a>
+              <a href="https://github.com/santistebanc/minigames" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+
+      <!-- Other projects -->
+      <div class="other-projects">
+        <h3 class="other-title">Other projects</h3>
+        <div class="other-list">
+
+          <div class="other-item">
+            <div class="other-left">
+              <span class="other-name">Super Kart Racing</span>
+              <div class="other-tech"><span>Unity</span><span>C#</span><span>Game Dev</span></div>
+            </div>
+            <p class="other-desc">Timed kart racing game with AI-driven opponents. Choose laps and tune acceleration, speed, and steering. Highscores saved in a leaderboard.</p>
+            <div class="other-links">
+              <a href="https://github.com/santistebanc/supercar" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="other-item">
+            <div class="other-left">
+              <span class="other-name">Multikey</span>
+              <div class="other-tech"><span>TypeScript</span><span>npm</span><span>Library</span></div>
+            </div>
+            <p class="other-desc">TypeScript library for multi-dimensional mapping. MultiMap, UniqueList, UniqueSet — efficient structures for caching and hierarchical lookups.</p>
+            <div class="other-links">
+              <a href="https://www.npmjs.com/package/@multikey/lib" target="_blank" rel="noopener" class="card-link">npm →</a>
+              <a href="https://github.com/santistebanc/multikey" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="other-item">
+            <div class="other-left">
+              <span class="other-name">Room Server</span>
+              <div class="other-tech"><span>PartyKit</span><span>TypeScript</span><span>WebSockets</span><span>KV</span></div>
+            </div>
+            <p class="other-desc">Generic PartyKit backend for realtime key/value state. CAS operations, TTL, presence, broadcast, schema validation, and scheduling — used by RankZap and SnapQuiz.</p>
+            <div class="other-links">
+              <a href="https://github.com/santistebanc/room-server" target="_blank" rel="noopener" class="card-link card-link-gh">GitHub →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── About ── -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div>
+          <p class="section-label">About</p>
+          <h2 class="section-title">Engineer & <em>builder</em></h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a <strong>fullstack engineer based in Berlin</strong> with 8+ years of experience in web development,
+            primarily with JavaScript/TypeScript and React. Web development is both my profession and hobby —
+            I'm genuinely passionate about building functional, good-looking applications with solid UX.
+          </p>
+          <p>
+            I keep up with the latest tools and have been actively using <strong>AI-assisted development</strong>
+            to work more productively, while maintaining good software fundamentals. Always learning, always experimenting.
+          </p>
+          <p>
+            Originally from Mexico, I hold <strong>full EU citizenship</strong> and have been living in Berlin since 2016.
+            Bachelor of IT Engineering from Tecnológico de Monterrey.
+          </p>
+        </div>
+
+        <div class="experience-list">
+          <div class="exp-item">
+            <div class="exp-company">Lingoda</div>
+            <div class="exp-role">Software Engineer — Language learning platform</div>
+            <div class="exp-period">Jun 2021 – Mar 2025 · Berlin</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-company">Quandoo</div>
+            <div class="exp-role">Software Engineer — Restaurant reservations</div>
+            <div class="exp-period">Sep 2017 – Jan 2021 · Berlin</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-company">Market Logic Software</div>
+            <div class="exp-role">Web Developer — Data visualization UIs</div>
+            <div class="exp-period">Mar 2016 – Jul 2016 · Berlin</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-company">AISA</div>
+            <div class="exp-role">Software Developer — Government systems</div>
+            <div class="exp-period">Apr 2015 – Jun 2015 · Mexico</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Skills ── -->
+  <div class="skills-section">
+    <div class="skills-inner">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">What I work with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">Redux</span>
+            <span class="skill-tag">Zustand</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Backend & Data</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">tRPC</span>
+            <span class="skill-tag">Prisma</span>
+            <span class="skill-tag">Hono</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Realtime & Infra</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PartyKit</span>
+            <span class="skill-tag">WebSockets</span>
+            <span class="skill-tag">Bun</span>
+            <span class="skill-tag">Cloudflare</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitHub Actions</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Tooling & Practice</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Cypress</span>
+            <span class="skill-tag">Playwright</span>
+            <span class="skill-tag">Jest</span>
+            <span class="skill-tag">Storybook</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Claude Code</span>
+            <span class="skill-tag">Sentry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-wrapper">
+    <section class="cta">
+      <div class="cta-content">
+        <h2>Let's build something <em>great</em> together.</h2>
+        <p>Open to full-time roles and exciting freelance work. Based in Berlin, available immediately.</p>
+      </div>
+      <div class="cta-action">
+        <a href="mailto:carlos.santisteban@outlook.com" class="cta-btn">
+          Get in touch ↗
+        </a>
+        <div class="cta-links">
+          <a href="https://github.com/santistebanc" target="_blank" rel="noopener" class="cta-link">GitHub</a>
+          <a href="mailto:carlos.santisteban@outlook.com" class="cta-link">Email</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Carlos Santisteban · Berlin, Germany</p>
+    <nav class="footer-nav">
+      <a href="https://github.com/santistebanc" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:carlos.santisteban@outlook.com">Email</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
