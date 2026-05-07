@@ -122,8 +122,6 @@ export const otherProjects: OtherProject[] = [
     title: 'Multikey',
     description: 'TypeScript library for multi-dimensional mapping. MultiMap, UniqueList, UniqueSet — efficient structures for caching and hierarchical lookups.',
     tech: ['TypeScript', 'npm', 'Library'],
-    liveUrl: 'https://www.npmjs.com/package/@multikey/lib',
-    liveLabel: 'npm →',
     githubUrl: 'https://github.com/santistebanc/multikey',
   },
   {
