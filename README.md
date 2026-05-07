@@ -1,6 +1,8 @@
 # Carlos Santisteban — Portfolio
 
-Personal portfolio site built with React, TypeScript, and Vite. Deployed to GitHub Pages at [carlos.santisteban.site](https://carlos.santisteban.site).
+🌐 **Live site: [carlos.santisteban.site](https://carlos.santisteban.site)**
+
+Personal portfolio site built with React, TypeScript, and Vite. Deployed to GitHub Pages.
 
 ## Stack
 
