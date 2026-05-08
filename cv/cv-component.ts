@@ -32,7 +32,7 @@ const palette = {
   goldenPollen: '#d4920a',
   bubblegumPink: '#b87a08',
   light: '#f7f9ff',
-  paper: '#f2f5fc',
+  paper: '#ffffff',
   borderSoft: '#d7dcee',
   pattern: '#bcc6df',
 };
@@ -498,15 +498,15 @@ const CV = () => React.createElement(
           { style: { marginTop: 3, alignItems: 'flex-end' } },
           React.createElement(
             View,
-            { style: { flexDirection: 'row', marginBottom: 4 } },
-            React.createElement(EmailIcon, { size: 10, color: palette.oceanBlue }),
-            React.createElement(Text, { style: { fontSize: 9, color: palette.darkTeal } }, 'carlos.santisteban@outlook.com')
+            { style: { flexDirection: 'row', marginBottom: 12 } },
+            React.createElement(LinkIcon, { size: 12, color: palette.goldenPollen }),
+            React.createElement(Link, { src: 'https://carlos.santisteban.site', style: { fontSize: 12, fontWeight: 700, color: palette.goldenPollen } }, 'carlos.santisteban.site')
           ),
           React.createElement(
             View,
             { style: { flexDirection: 'row', marginBottom: 4 } },
-            React.createElement(LinkIcon, { size: 10, color: palette.oceanBlue }),
-            React.createElement(Link, { src: 'https://carlos.santisteban.site', style: { fontSize: 9, color: palette.oceanBlue } }, 'carlos.santisteban.site')
+            React.createElement(EmailIcon, { size: 10, color: palette.oceanBlue }),
+            React.createElement(Text, { style: { fontSize: 9, color: palette.darkTeal } }, 'carlos.santisteban@outlook.com')
           ),
           React.createElement(
             View,
