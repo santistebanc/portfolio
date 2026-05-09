@@ -86,7 +86,7 @@ export const projects: Project[] = [
   {
     id: 'minitanks',
     title: 'MiniTanks',
-    description: 'Classic Flash tank game resurrected in the browser via Ruffle — no plugin required. Survive enemy waves, collect crates, use cover.',
+    description: 'Tank game I built in university, now playable in the browser via Ruffle. Survive enemy waves, collect crates, use cover.',
     tech: ['Flash', 'ActionScript 3', 'Ruffle'],
     screenshot: 'https://raw.githubusercontent.com/santistebanc/minitanks/master/assets/demo-screenshot.png',
     screenshotAlt: 'MiniTanks — browser game',
