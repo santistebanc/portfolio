@@ -36,18 +36,6 @@ export const featuredProject = {
 
 export const projects: Project[] = [
   {
-    id: 'rankzap',
-    title: 'RankZap',
-    description: 'Real-time mobile-first ranked-voting. Drag to rank, submit, watch live tallies with Borda, Dowdall, and Copeland modes.',
-    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind'],
-    screenshot: 'https://raw.githubusercontent.com/santistebanc/rankzap/main/public/rankzap-screenshot.png',
-    screenshotAlt: 'Rankzap — ranked voting app',
-    liveUrl: 'https://rankzap.site',
-    liveLabel: 'Live →',
-    githubUrl: 'https://github.com/santistebanc/rankzap',
-    gradClass: 'grad-1',
-  },
-  {
     id: 'flyscan',
     title: 'Flyscan',
     description: 'Flight comparison tool scraping Skyscanner and Kiwi simultaneously. Filter by price, duration, stops, and inspect full itinerary timelines.',
@@ -57,6 +45,18 @@ export const projects: Project[] = [
     liveUrl: 'https://flyscan.site',
     liveLabel: 'Live →',
     githubUrl: 'https://github.com/santistebanc/flyscan',
+    gradClass: 'grad-1',
+  },
+  {
+    id: 'rankzap',
+    title: 'RankZap',
+    description: 'Real-time mobile-first ranked-voting. Drag to rank, submit, watch live tallies with Borda, Dowdall, and Copeland modes.',
+    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind'],
+    screenshot: 'https://raw.githubusercontent.com/santistebanc/rankzap/main/public/rankzap-screenshot.png',
+    screenshotAlt: 'Rankzap — ranked voting app',
+    liveUrl: 'https://rankzap.site',
+    liveLabel: 'Live →',
+    githubUrl: 'https://github.com/santistebanc/rankzap',
     gradClass: 'grad-2',
   },
   {
