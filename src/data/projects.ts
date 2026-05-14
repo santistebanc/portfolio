@@ -39,7 +39,7 @@ export const projects: Project[] = [
     id: 'flyscan',
     title: 'Flyscan',
     description: 'Flight comparison tool scraping Skyscanner and Kiwi simultaneously. Filter by price, duration, stops, and inspect full itinerary timelines.',
-    tech: ['React', 'Bun', 'Vite', 'Hono', 'TypeScript'],
+    tech: ['React', 'Bun', 'Vite', 'TypeScript'],
     screenshot: 'https://raw.githubusercontent.com/santistebanc/flyscan/master/docs/screenshots/app.png',
     screenshotAlt: 'Flyscan — flight comparison',
     liveUrl: 'https://flyscan.site',
