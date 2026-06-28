@@ -47,8 +47,8 @@ export default function Work() {
     <section className="section" id="work">
       <div className="section-header">
         <div>
-          <p className="section-label">Selected Work</p>
-          <h2 className="section-title">Projects I'm <em>proud</em> of</h2>
+          <p className="section-label">Selected Product Work</p>
+          <h2 className="section-title">Polished apps, product flows, and useful systems</h2>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function Work() {
       <article className="featured">
         <FeaturedImage src={featuredProject.screenshot} alt={featuredProject.screenshotAlt} />
         <div className="featured-content">
-          <span className="featured-badge">★ Featured</span>
+          <span className="featured-badge">Featured product</span>
           <h3 className="featured-title">{featuredProject.title}</h3>
           <p className="featured-desc">{featuredProject.description}</p>
           <div className="tech-row">
@@ -66,7 +66,7 @@ export default function Work() {
           </div>
           <div className="project-links">
             <a href={featuredProject.liveUrl} target="_blank" rel="noopener" className="btn btn-primary">
-              Live app →
+              Live app &rarr;
             </a>
             <a href={featuredProject.githubUrl} target="_blank" rel="noopener" className="btn btn-ghost">
               GitHub
@@ -89,11 +89,11 @@ export default function Work() {
               <div className="card-links">
                 {p.liveUrl && (
                   <a href={p.liveUrl} target="_blank" rel="noopener" className="card-link">
-                    {p.liveLabel ?? 'Live →'}
+                    {p.liveLabel ?? 'Live &rarr;'}
                   </a>
                 )}
                 <a href={p.githubUrl} target="_blank" rel="noopener" className="card-link card-link-gh">
-                  GitHub →
+                  GitHub &rarr;
                 </a>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function Work() {
                   </a>
                 )}
                 <a href={p.githubUrl} target="_blank" rel="noopener" className="card-link card-link-gh">
-                  GitHub →
+                  GitHub &rarr;
                 </a>
               </div>
             </div>

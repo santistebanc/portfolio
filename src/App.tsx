@@ -1,6 +1,7 @@
 import Hero from './components/Hero'
 import Work from './components/Work'
 import About from './components/About'
+import AIWorkflow from './components/AIWorkflow'
 import Skills from './components/Skills'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
@@ -13,6 +14,7 @@ export default function App() {
       <main>
         <Hero />
         <Work />
+        <AIWorkflow />
         <About />
       </main>
       <Skills />
