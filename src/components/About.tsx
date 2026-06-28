@@ -22,26 +22,30 @@ export default function About() {
       <div className="section-header">
         <div>
           <p className="section-label">About</p>
-          <h2 className="section-title">Engineer & <em>builder</em></h2>
+          <h2 className="section-title">Hands-on product engineer</h2>
         </div>
       </div>
 
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a <strong>fullstack engineer based in Berlin</strong> with 8+ years of experience in web
-            development, primarily with JavaScript/TypeScript and React. Web development is both my
-            profession and hobby — I'm genuinely passionate about building functional, good-looking
-            applications with solid UX.
+            I'm a <strong>React/TypeScript product engineer based in Berlin</strong> with 8+ years of
+            professional experience building user-facing web applications, especially UI systems,
+            forms, onboarding flows, interactive components, and polished product UX.
           </p>
           <p>
-            I keep up with the latest tools and have been actively using{' '}
-            <strong>AI-assisted development</strong> to work more productively, while maintaining good
-            software fundamentals. Always learning, always experimenting.
+            My strongest work sits where <strong>frontend craft, product judgment, and practical
+            full-stack ownership</strong> meet: shaping a feature, building the interface, connecting
+            the data, deploying it, and iterating until it feels useful.
           </p>
           <p>
-            Originally from Mexico, I hold <strong>full EU citizenship</strong> and have been living in
-            Berlin since 2016. Bachelor of IT Engineering from Tecnológico de Monterrey.
+            Since Lingoda, I have been building independent full-stack apps and developing a serious
+            AI-assisted delivery workflow. I am not an ML researcher; I am a practical software
+            engineer using modern tools to build better product slices faster.
+          </p>
+          <p>
+            Originally from Mexico, I hold <strong>full EU citizenship</strong> and have lived in Berlin
+            since 2016. Bachelor of IT Engineering from Tecnologico de Monterrey.
           </p>
         </div>
 
