@@ -39,13 +39,14 @@ export default function About() {
             the data, deploying it, and iterating until it feels useful.
           </p>
           <p>
-            Since Lingoda, I have been building independent full-stack apps and developing a serious
-            AI-assisted delivery workflow. I am not an ML researcher; I am a practical software
-            engineer using modern tools to build better product slices faster.
+            After Lingoda, I focused on independent product work: building and shipping web apps
+            with React, TypeScript, and modern AI-assisted development workflows. I am not an ML
+            researcher; I am a product engineer using modern tools to build better product slices
+            faster.
           </p>
           <p>
-            Originally from Mexico, I hold <strong>full EU citizenship</strong> and have lived in Berlin
-            since 2016. Bachelor of IT Engineering from Tecnologico de Monterrey.
+            Originally from Mexico, I hold <strong>full EU citizenship</strong> and have a Bachelor of
+            IT Engineering from Tecnologico de Monterrey.
           </p>
         </div>
 
