@@ -127,43 +127,48 @@ export const otherProjects: OtherProject[] = [
 
 export const skills = [
   {
-    title: 'Core Product Engineering',
-    tags: ['React', 'TypeScript', 'JavaScript', 'UI Architecture', 'Product UX'],
+    title: 'Product UI Engineering',
+    tags: ['React', 'TypeScript', 'JavaScript', 'UI Architecture', 'Forms', 'Design Systems'],
   },
   {
-    title: 'Frontend Surfaces',
-    tags: ['Forms', 'Onboarding', 'Responsive UI', 'Design Systems', 'State Management'],
+    title: 'Full-Stack Product Delivery',
+    tags: ['Node.js', 'REST APIs', 'GraphQL', 'PostgreSQL', 'WebSockets', 'PWA'],
   },
   {
-    title: 'Backend & Realtime',
-    tags: ['Node.js', 'PostgreSQL', 'GraphQL', 'REST APIs', 'Redis', 'WebSockets', 'PartyKit'],
+    title: 'AI-Assisted Development',
+    tags: ['AI SDKs', 'AI Workflows', 'Agent Skills', 'MCPs', 'LLM APIs', 'Prototyping'],
   },
   {
-    title: 'AI & Delivery Tooling',
-    tags: ['AI SDKs', 'AI Workflows', 'Agent Skills', 'Playwright', 'Docker', 'GitHub Actions'],
+    title: 'Quality & Release',
+    tags: ['Playwright', 'Debugging', 'Code Review', 'GitHub Actions', 'Docker', 'CI/CD'],
   },
 ]
 
 export const experience = [
   {
+    company: 'Independent Product Development',
+    role: 'Web apps, product UX, and AI-assisted delivery workflows',
+    period: 'Apr 2025 - Present - Berlin',
+  },
+  {
     company: 'Lingoda',
     role: 'Software Engineer - production learning platform',
-    period: 'Jun 2021 - Mar 2025 · Berlin',
+    period: 'Jun 2021 - Mar 2025 - Berlin',
     logoUrl: 'https://www.lingoda.com/favicon.ico',
   },
   {
     company: 'Quandoo',
     role: 'Software Engineer - consumer reservation marketplace',
-    period: 'Sep 2017 - Jan 2021 · Berlin',
+    period: 'Sep 2017 - Jan 2021 - Berlin',
   },
   {
     company: 'Market Logic Software',
     role: 'Web Developer - data visualization UIs',
-    period: 'Mar 2016 - Jul 2016 · Berlin',
+    period: 'Mar 2016 - Jul 2016 - Berlin',
   },
   {
     company: 'AISA',
     role: 'Software Developer - document management systems',
-    period: 'Apr 2015 - Jun 2015 · Mexico',
+    period: 'Apr 2015 - Jun 2015 - Mexico',
   },
 ]

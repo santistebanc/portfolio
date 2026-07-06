@@ -49,6 +49,11 @@ export default function Work() {
         <div>
           <p className="section-label">Selected Product Work</p>
           <h2 className="section-title">Polished apps, product flows, and useful systems</h2>
+          <p className="section-intro">
+            Independent web applications built with React, TypeScript, and modern AI-assisted
+            development workflows, focused on product UX, search and comparison flows, realtime
+            interactions, PWA behavior, deployment, and iteration.
+          </p>
         </div>
       </div>
 

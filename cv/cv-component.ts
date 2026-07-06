@@ -32,10 +32,15 @@ const styles = StyleSheet.create({
   subtitle: { fontSize: 9.8, color: palette.muted, lineHeight: 1.25 },
   contact: { alignItems: 'flex-end', marginTop: 2 },
   contactRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 3 },
+  portfolioRow: { flexDirection: 'row', alignItems: 'center', height: 20, marginBottom: 7, padding: '0 6', backgroundColor: palette.accentSoft, borderRadius: 4 },
+  portfolioLabel: { fontSize: 8.3, lineHeight: 1, color: palette.muted, marginRight: 4 },
+  portfolioLink: { fontSize: 10.2, lineHeight: 1, fontWeight: 700, color: palette.accent, textDecoration: 'none' },
   contactText: { fontSize: 8.7, color: palette.muted },
   contactLink: { fontSize: 8.7, color: palette.accent, textDecoration: 'none' },
   section: { marginTop: 8 },
-  sectionTitle: { fontSize: 10, fontWeight: 700, color: palette.text, textTransform: 'uppercase', letterSpacing: 0.7, paddingBottom: 3, marginBottom: 5, borderBottom: `1 solid ${palette.border}` },
+  sectionHeading: { flexDirection: 'row', alignItems: 'center', paddingBottom: 3, marginBottom: 5, borderBottom: `1 solid ${palette.border}` },
+  sectionIconWrap: { width: 14, height: 14, marginRight: 6, borderRadius: 3, backgroundColor: palette.accentSoft, alignItems: 'center', justifyContent: 'center' },
+  sectionTitle: { fontSize: 10, fontWeight: 700, color: palette.text, textTransform: 'uppercase', letterSpacing: 0.7 },
   summary: { fontSize: 10.1, lineHeight: 1.48, padding: '7 9', backgroundColor: palette.accentSoft, borderLeft: `3 solid ${palette.accent}` },
   job: { marginBottom: 7 },
   jobHeader: { flexDirection: 'row', justifyContent: 'space-between', gap: 12, marginBottom: 2 },
@@ -50,10 +55,20 @@ const styles = StyleSheet.create({
   listItem: { fontSize: 9.5, lineHeight: 1.42, color: palette.text, marginBottom: 3 },
   twoCol: { flexDirection: 'row', gap: 18 },
   col: { flex: 1 },
+  projectItem: { marginTop: 0 },
+  projectItemSpaced: { marginTop: 7 },
+  projectTitleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 1 },
+  projectLiveLink: { fontSize: 8.3, color: palette.accent, textDecoration: 'none' },
   miniHeader: { paddingBottom: 8, marginBottom: 10, borderBottom: `1 solid ${palette.border}`, flexDirection: 'row', justifyContent: 'space-between' },
 });
 
 const jobs = [
+  {
+    company: 'Independent Product Development',
+    role: 'Web apps, product UX, and AI-assisted delivery workflows',
+    meta: 'Berlin | Apr 2025 - Present',
+    body: 'Built and shipped independent web applications with React, TypeScript, and modern AI-assisted development workflows. Focused on polished product UX, search/comparison interfaces, realtime interactions, PWA behavior, deployment, and iteration. Developed a practical AI-assisted delivery workflow combining research, structured decision-making, prototyping, vertical-slice implementation, manual review, deployment, and maintenance.',
+  },
   {
     company: 'Lingoda',
     role: 'Software Engineer - Language learning platform',
@@ -81,10 +96,10 @@ const jobs = [
 ];
 
 const skillGroups = [
-  ['Core', 'React, TypeScript, JavaScript, UI architecture, product UX'],
-  ['Frontend', 'Forms, onboarding flows, responsive design, design systems, state management'],
-  ['Backend', 'Node.js, REST/GraphQL APIs, PostgreSQL, Redis, WebSockets'],
-  ['AI & Tooling', 'AI SDKs, AI-assisted development workflows, reusable agent skills, Playwright, GitHub Actions, Docker'],
+  ['Product UI Engineering', 'React, TypeScript, JavaScript, UI architecture, forms, onboarding flows, responsive interfaces, design systems'],
+  ['Full-Stack Product Delivery', 'Node.js, REST/GraphQL APIs, PostgreSQL, Redis, WebSockets, PWA/offline behavior'],
+  ['AI-Assisted Development', 'LLM/AI SDKs, coding agents, reusable agent skills, MCP workflows, research/prototyping/implementation loops'],
+  ['Quality & Release', 'Playwright, debugging, code review, GitHub Actions, Docker, deployment, CI/CD'],
 ];
 
 const competencies = [
@@ -95,8 +110,17 @@ const competencies = [
   'Collaborating with product, design, backend, and cross-functional teams in startup/product environments.',
 ];
 
+const sectionIcons: Record<string, string> = {
+  Summary: 'M4 5h16v2H4V5Zm0 5h16v2H4v-2Zm0 5h10v2H4v-2Z',
+  Experience: 'M9 5h6l1 2h4v12H4V7h4l1-2Zm1.2 2-.5 1h4.6l-.5-1h-3.6ZM6 10v7h12v-7H6Z',
+  Education: 'M12 4 3 8l9 4 9-4-9-4Zm-5 7v4c2.8 2 7.2 2 10 0v-4l-5 2.2L7 11Z',
+  'Technical Skills': 'M8.5 7 4 12l4.5 5 1.5-1.3L6.8 12l3.2-3.7L8.5 7Zm7 0L14 8.3l3.2 3.7-3.2 3.7 1.5 1.3L20 12l-4.5-5Zm-4 11 2-12h-2l-2 12h2Z',
+  'Product Engineering Strengths': 'M4 5h11v2H4V5Zm0 6h11v2H4v-2Zm0 6h8v2H4v-2Zm13.2-1.8 1.4 1.4-3.6 3.6-2.2-2.2 1.4-1.4.8.8 2.2-2.2Z',
+  'Selected Independent Work': 'M4 5h7v6H4V5Zm9 0h7v6h-7V5ZM4 13h7v6H4v-6Zm9 0h7v6h-7v-6Z',
+};
+
 const renderIcon = (kind: 'link' | 'email' | 'github' | 'location') => {
-  const common = { width: 8, height: 8, viewBox: '0 0 24 24', style: { marginRight: 4 } };
+  const common = { width: 8, height: 8, viewBox: '0 0 24 24', style: { marginRight: 4, alignSelf: 'center' } };
   if (kind === 'email') {
     return React.createElement(Svg, common, React.createElement(Path, { d: 'M4 4h16v16H4z', stroke: palette.muted, fill: 'none', strokeWidth: 2 }), React.createElement(Path, { d: 'M4 7l8 6 8-6', stroke: palette.muted, fill: 'none', strokeWidth: 2 }));
   }
@@ -109,11 +133,57 @@ const renderIcon = (kind: 'link' | 'email' | 'github' | 'location') => {
   return React.createElement(Svg, common, React.createElement(Path, { d: 'M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7', stroke: palette.muted, fill: 'none', strokeWidth: 2 }));
 };
 
+const renderSectionIcon = (title: string) =>
+  React.createElement(
+    View,
+    { style: styles.sectionIconWrap },
+    React.createElement(
+      Svg,
+      { width: 8, height: 8, viewBox: '0 0 24 24' },
+      React.createElement(Path, { d: sectionIcons[title] ?? sectionIcons.Summary, fill: palette.accent })
+    )
+  );
+
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) =>
-  React.createElement(View, { style: styles.section }, React.createElement(Text, { style: styles.sectionTitle }, title), children);
+  React.createElement(
+    View,
+    { style: styles.section },
+    React.createElement(
+      View,
+      { style: styles.sectionHeading },
+      renderSectionIcon(title),
+      React.createElement(Text, { style: styles.sectionTitle }, title)
+    ),
+    children
+  );
 
 const ContactRow = ({ icon, children }: { icon: 'link' | 'email' | 'github' | 'location'; children: React.ReactNode }) =>
   React.createElement(View, { style: styles.contactRow }, renderIcon(icon), children);
+
+const ProjectItem = ({
+  title,
+  liveUrl,
+  liveLabel,
+  children,
+  spaced = false,
+}: {
+  title: string;
+  liveUrl: string;
+  liveLabel: string;
+  children: string;
+  spaced?: boolean;
+}) =>
+  React.createElement(
+    View,
+    { style: spaced ? styles.projectItemSpaced : styles.projectItem },
+    React.createElement(
+      View,
+      { style: styles.projectTitleRow },
+      React.createElement(Text, { style: styles.company }, title),
+      React.createElement(Link, { src: liveUrl, style: styles.projectLiveLink }, liveLabel)
+    ),
+    React.createElement(Text, { style: styles.paragraph }, children)
+  );
 
 const CV = () =>
   React.createElement(
@@ -138,7 +208,13 @@ const CV = () =>
           React.createElement(
             View,
             { style: styles.contact },
-            React.createElement(ContactRow, { icon: 'link' }, React.createElement(Link, { src: 'https://carlos.santisteban.site', style: styles.contactLink }, 'carlos.santisteban.site')),
+            React.createElement(
+              View,
+              { style: styles.portfolioRow },
+              renderIcon('link'),
+              React.createElement(Text, { style: styles.portfolioLabel }, 'Portfolio:'),
+              React.createElement(Link, { src: 'https://carlos.santisteban.site', style: styles.portfolioLink }, 'carlos.santisteban.site')
+            ),
             React.createElement(ContactRow, { icon: 'email' }, React.createElement(Text, { style: styles.contactText }, 'carlos.santisteban@outlook.com')),
             React.createElement(ContactRow, { icon: 'github' }, React.createElement(Link, { src: 'https://github.com/santistebanc', style: styles.contactLink }, 'github.com/santistebanc')),
             React.createElement(ContactRow, { icon: 'location' }, React.createElement(Text, { style: styles.contactText }, 'Berlin, Germany | Mexican & Spanish EU citizen'))
@@ -150,12 +226,12 @@ const CV = () =>
         children: React.createElement(Text, { style: styles.summary }, 'Product-minded React/TypeScript engineer with 8+ years of professional experience building user-facing web applications, especially UI systems, onboarding flows, forms, interactive components, and polished product UX. Strongest in hands-on product engineering roles where UI quality, maintainable code, and practical full-stack ownership matter. Experienced with independent full-stack app delivery and AI-assisted development workflows across research, prototyping, implementation, debugging, deployment, and iteration.'),
       }),
       Section({
-        title: 'Professional Experience',
+        title: 'Experience',
         children: React.createElement(View, null, ...jobs.map((job) => React.createElement(View, { key: job.company, style: styles.job }, React.createElement(View, { style: styles.jobHeader }, React.createElement(Text, { style: styles.company }, job.company), React.createElement(Text, { style: styles.meta }, job.meta)), React.createElement(Text, { style: styles.role }, job.role), React.createElement(Text, { style: styles.paragraph }, job.body)))),
       }),
       Section({
-        title: 'Independent Product Development',
-        children: React.createElement(View, { style: styles.compactBlock }, React.createElement(View, { style: styles.jobHeader }, React.createElement(Text, { style: styles.company }, 'Independent full-stack applications'), React.createElement(Text, { style: styles.meta }, '2025 - Present')), React.createElement(Text, { style: styles.paragraph }, 'Built and deployed independent full-stack web applications with React/TypeScript, including polished PWA product UX, search/comparison interfaces, realtime multiplayer flows, reusable backend services, and AI-generated content features. Developed a practical AI-assisted delivery workflow combining research, structured decision-making, prototyping, vertical-slice implementation, manual review, deployment, and maintenance.')),
+        title: 'Education',
+        children: React.createElement(View, null, React.createElement(View, { style: styles.jobHeader }, React.createElement(Text, { style: styles.company }, 'Bachelor of IT Engineering'), React.createElement(Text, { style: styles.meta }, 'Aug 2012 - May 2017')), React.createElement(Text, { style: styles.role }, 'Tecnologico de Monterrey, Mexico'), React.createElement(Text, { style: styles.paragraph }, 'Studies covered object-oriented programming, data structures, databases, networks, servers and operating systems, IT security, and cloud computing.')),
       })
     ),
     React.createElement(
@@ -175,13 +251,19 @@ const CV = () =>
         children: React.createElement(
           View,
           { style: styles.twoCol },
-          React.createElement(View, { style: styles.col }, React.createElement(Text, { style: styles.company }, 'OV Berlin'), React.createElement(Text, { style: styles.paragraph }, 'Public PWA for finding original-version cinema screenings in Berlin, with automated data refresh, rating/trailer enrichment, offline support, maps, and fast search/filter UX. Built and deployed end to end.'), React.createElement(Text, { style: { ...styles.company, marginTop: 7 } }, 'Flyscan'), React.createElement(Text, { style: styles.paragraph }, 'Flight comparison interface that aggregates multiple providers into a filterable itinerary view, with emphasis on search UX, loading states, result comparison, and deployment.')),
-          React.createElement(View, { style: styles.col }, React.createElement(Text, { style: styles.company }, 'SnapQuiz'), React.createElement(Text, { style: styles.paragraph }, 'Realtime group quiz app with TV and mobile flows, AI-generated questions, voice/tap answering, and multiplayer room coordination.'), React.createElement(Text, { style: { ...styles.company, marginTop: 7 } }, 'RankZap / Room Server'), React.createElement(Text, { style: styles.paragraph }, 'Realtime ranked-voting product and reusable PartyKit backend service for presence, key/value state, validation, scheduling, and WebSocket updates.'))
+          React.createElement(
+            View,
+            { style: styles.col },
+            React.createElement(ProjectItem, { title: 'OV Berlin', liveUrl: 'https://ovberlin.site', liveLabel: 'ovberlin.site' }, 'Public PWA for finding original-version cinema screenings in Berlin, with automated data refresh, rating/trailer enrichment, offline support, maps, and fast search/filter UX. Built and deployed end to end.'),
+            React.createElement(ProjectItem, { title: 'Flyscan', liveUrl: 'https://flyscan.site', liveLabel: 'flyscan.site', spaced: true }, 'Flight comparison interface that aggregates multiple providers into a filterable itinerary view, with emphasis on search UX, loading states, result comparison, and deployment.')
+          ),
+          React.createElement(
+            View,
+            { style: styles.col },
+            React.createElement(ProjectItem, { title: 'SnapQuiz', liveUrl: 'https://snapquiz.fun/', liveLabel: 'snapquiz.fun' }, 'Realtime group quiz app with TV and mobile flows, AI-generated questions, voice/tap answering, and multiplayer room coordination.'),
+            React.createElement(ProjectItem, { title: 'RankZap', liveUrl: 'https://rankzap.site', liveLabel: 'rankzap.site', spaced: true }, 'Realtime ranked-voting product with mobile-first drag-and-drop ranking, live tallies, multiple voting modes, presence, validation, and WebSocket updates.')
+          )
         ),
-      }),
-      Section({
-        title: 'Education',
-        children: React.createElement(View, null, React.createElement(View, { style: styles.jobHeader }, React.createElement(Text, { style: styles.company }, 'Bachelor of IT Engineering'), React.createElement(Text, { style: styles.meta }, 'Aug 2012 - May 2017')), React.createElement(Text, { style: styles.role }, 'Tecnologico de Monterrey, Mexico'), React.createElement(Text, { style: styles.paragraph }, 'Studies covered object-oriented programming, data structures, databases, networks, servers and operating systems, IT security, and cloud computing.')),
       })
     )
   );
