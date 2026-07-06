@@ -28,7 +28,7 @@ export const featuredProject = {
   description:
     'Public PWA for finding original-version cinema screenings in Berlin, with automated data refresh, rating/trailer enrichment, offline support, maps, and fast search/filter UX. Built and deployed end to end.',
   tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Fuse.js', 'GitHub Actions'],
-  screenshot: 'https://raw.githubusercontent.com/santistebanc/berlin-cinema/main/docs/screenshot1.png',
+  screenshot: '/ovberlin-screenshot.png',
   screenshotAlt: 'OV Berlin cinema listings app',
   liveUrl: 'https://ovberlin.site',
   githubUrl: 'https://github.com/santistebanc/berlin-cinema',
