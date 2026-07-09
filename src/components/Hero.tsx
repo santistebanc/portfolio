@@ -5,11 +5,11 @@ export default function Hero() {
         <p className="hero-kicker">Carlos Santisteban</p>
         <h1 className="hero-name">
           Product-Minded<br />
-          <span className="line2">React/TypeScript Engineer</span>
+          <span className="line2">Software Engineer</span>
         </h1>
         <p className="hero-tagline">
-          Product-minded React/TypeScript engineer building polished user-facing apps,
-          full-stack product features, and AI-assisted development workflows.
+          Product-minded software engineer building polished user-facing apps,
+          practical product features, and AI-assisted development workflows.
         </p>
         <div className="hero-actions">
           <a href="#work" className="btn btn-primary">See selected work &rarr;</a>
@@ -22,8 +22,8 @@ export default function Hero() {
             <div className="stat-label">professional product work</div>
           </div>
           <div className="stat">
-            <div className="stat-num">React <span className="stat-unit">+ TS</span></div>
-            <div className="stat-label">frontend engineering focus</div>
+            <div className="stat-num">UI <span className="stat-unit">+ Product</span></div>
+            <div className="stat-label">user-facing engineering focus</div>
           </div>
           <div className="stat">
             <div className="stat-num">AI <span className="stat-unit">Workflows</span></div>

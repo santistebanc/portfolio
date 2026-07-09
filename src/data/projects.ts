@@ -48,6 +48,18 @@ export const projects: Project[] = [
     gradClass: 'grad-1',
   },
   {
+    id: 'rankzap',
+    title: 'RankZap',
+    description: 'Real-time mobile-first ranked-voting product. Drag to rank, submit, and watch live tallies across Borda, Dowdall, and Copeland modes.',
+    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind'],
+    screenshot: '/rankzap-screenshot.png',
+    screenshotAlt: 'RankZap ranked voting app',
+    liveUrl: 'https://rankzap.site',
+    liveLabel: 'Live ->',
+    githubUrl: 'https://github.com/santistebanc/rankzap',
+    gradClass: 'grad-2',
+  },
+  {
     id: 'snapquiz',
     title: 'SnapQuiz',
     description: 'Realtime multiplayer quiz for groups on a shared screen and mobile devices, with AI-generated questions, room coordination, and voice or tap answering flows.',
@@ -58,18 +70,6 @@ export const projects: Project[] = [
     liveLabel: 'Live ->',
     githubUrl: 'https://github.com/santistebanc/snapquiz',
     gradClass: 'grad-3',
-  },
-  {
-    id: 'rankzap',
-    title: 'RankZap',
-    description: 'Real-time mobile-first ranked-voting product. Drag to rank, submit, and watch live tallies across Borda, Dowdall, and Copeland modes.',
-    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind'],
-    screenshot: 'https://raw.githubusercontent.com/santistebanc/rankzap/main/public/rankzap-screenshot.png',
-    screenshotAlt: 'RankZap ranked voting app',
-    liveUrl: 'https://rankzap.site',
-    liveLabel: 'Live ->',
-    githubUrl: 'https://github.com/santistebanc/rankzap',
-    gradClass: 'grad-2',
   }
 ]
 
@@ -128,7 +128,7 @@ export const otherProjects: OtherProject[] = [
 export const skills = [
   {
     title: 'Product UI Engineering',
-    tags: ['React', 'TypeScript', 'JavaScript', 'UI Architecture', 'Forms', 'Design Systems'],
+    tags: ['JavaScript', 'TypeScript', 'React', 'UI Architecture', 'Forms', 'Design Systems'],
   },
   {
     title: 'Full-Stack Product Delivery',
