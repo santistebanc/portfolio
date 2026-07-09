@@ -49,7 +49,7 @@ export default function Hero() {
             {'}'}
           </div>
         </div>
-        <div className="visual-badge">Open to product engineering roles</div>
+        <div className="visual-badge">Open to work</div>
       </div>
     </section>
   )
