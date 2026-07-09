@@ -67,7 +67,7 @@ const jobs = [
     company: 'Independent Product Development',
     role: 'Web apps, product UX, and AI-assisted delivery workflows',
     meta: 'Berlin | Apr 2025 - Present',
-    body: 'Built and shipped independent web applications with React, TypeScript, and modern AI-assisted development workflows. Focused on polished product UX, search/comparison interfaces, realtime interactions, PWA behavior, deployment, and iteration. Developed a practical AI-assisted delivery workflow combining research, structured decision-making, prototyping, vertical-slice implementation, manual review, deployment, and maintenance.',
+    body: 'Built and shipped independent web applications with modern JavaScript/TypeScript tooling and AI-assisted development workflows. Focused on polished product UX, search/comparison interfaces, realtime interactions, PWA behavior, deployment, and iteration. Developed a practical AI-assisted delivery workflow combining research, structured decision-making, prototyping, vertical-slice implementation, manual review, deployment, and maintenance.',
   },
   {
     company: 'Lingoda',
@@ -96,14 +96,14 @@ const jobs = [
 ];
 
 const skillGroups = [
-  ['Product UI Engineering', 'React, TypeScript, JavaScript, UI architecture, forms, onboarding flows, responsive interfaces, design systems'],
+  ['Product UI Engineering', 'JavaScript, TypeScript, React, UI architecture, forms, onboarding flows, responsive interfaces, design systems'],
   ['Full-Stack Product Delivery', 'Node.js, REST/GraphQL APIs, PostgreSQL, Redis, WebSockets, PWA/offline behavior'],
   ['AI-Assisted Development', 'LLM/AI SDKs, coding agents, reusable agent skills, MCP workflows, research/prototyping/implementation loops'],
   ['Quality & Release', 'Playwright, debugging, code review, GitHub Actions, Docker, deployment, CI/CD'],
 ];
 
 const competencies = [
-  'Building polished user-facing product surfaces with maintainable React/TypeScript code.',
+  'Building polished user-facing product surfaces with maintainable JavaScript/TypeScript code and modern UI architecture.',
   'Designing UI systems, forms, onboarding flows, responsive interfaces, and interactive components.',
   'Owning practical full-stack product slices across frontend, APIs, data, deployment, and iteration.',
   'Using AI-assisted workflows for research, prototyping, implementation, debugging, and review while staying accountable for architecture, UX, and code quality.',
@@ -202,8 +202,8 @@ const CV = () =>
             View,
             { style: { flex: 1 } },
             React.createElement(Text, { style: styles.name }, 'Carlos Santisteban'),
-            React.createElement(Text, { style: styles.headline }, 'Product-Minded React/TypeScript Engineer'),
-            React.createElement(Text, { style: styles.subtitle }, 'Frontend-focused delivery, UI systems, and AI-assisted development')
+            React.createElement(Text, { style: styles.headline }, 'Product-Minded Software Engineer'),
+            React.createElement(Text, { style: styles.subtitle }, 'User-facing product engineering, UI systems, and AI-assisted development')
           ),
           React.createElement(
             View,
@@ -223,7 +223,7 @@ const CV = () =>
       ),
       Section({
         title: 'Summary',
-        children: React.createElement(Text, { style: styles.summary }, 'Product-minded React/TypeScript engineer with 8+ years of professional experience building user-facing web applications, especially UI systems, onboarding flows, forms, interactive components, and polished product UX. Strongest in hands-on product engineering roles where UI quality, maintainable code, and practical full-stack ownership matter. Experienced with independent full-stack app delivery and AI-assisted development workflows across research, prototyping, implementation, debugging, deployment, and iteration.'),
+        children: React.createElement(Text, { style: styles.summary }, 'Product-minded software engineer with 8+ years of professional experience building user-facing web applications, especially UI systems, onboarding flows, forms, interactive components, and polished product UX. Strong professional foundation in React, TypeScript, JavaScript, and modern web UI, with the fundamentals to adapt across adjacent frontend stacks. Strongest in hands-on product engineering roles where UI quality, maintainable code, and practical full-stack ownership matter. Experienced with independent full-stack app delivery and AI-assisted development workflows across research, prototyping, implementation, debugging, deployment, and iteration.'),
       }),
       Section({
         title: 'Experience',
@@ -237,7 +237,7 @@ const CV = () =>
     React.createElement(
       Page,
       { size: 'A4', style: styles.page },
-      React.createElement(View, { style: styles.miniHeader }, React.createElement(Text, { style: { fontSize: 13, fontWeight: 700 } }, 'Carlos Santisteban'), React.createElement(Text, { style: { fontSize: 9.5, color: palette.muted } }, 'Product-Minded React/TypeScript Engineer')),
+      React.createElement(View, { style: styles.miniHeader }, React.createElement(Text, { style: { fontSize: 13, fontWeight: 700 } }, 'Carlos Santisteban'), React.createElement(Text, { style: { fontSize: 9.5, color: palette.muted } }, 'Product-Minded Software Engineer')),
       Section({
         title: 'Technical Skills',
         children: React.createElement(View, null, ...skillGroups.map(([label, text]) => React.createElement(View, { key: label, style: styles.skillRow }, React.createElement(Text, { style: styles.skillLabel }, `${label}:`), React.createElement(Text, { style: styles.skillText }, text)))),

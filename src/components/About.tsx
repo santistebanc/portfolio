@@ -29,7 +29,7 @@ export default function About() {
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a <strong>React/TypeScript product engineer based in Berlin</strong> with 8+ years of
+            I'm a <strong>product-minded software engineer based in Berlin</strong> with 8+ years of
             professional experience building user-facing web applications, especially UI systems,
             forms, onboarding flows, interactive components, and polished product UX.
           </p>
@@ -40,9 +40,9 @@ export default function About() {
           </p>
           <p>
             After Lingoda, I focused on independent product work: building and shipping web apps
-            with React, TypeScript, and modern AI-assisted development workflows. I am not an ML
-            researcher; I am a product engineer using modern tools to build better product slices
-            faster.
+            with modern JavaScript/TypeScript tooling and AI-assisted development workflows. I am
+            not an ML researcher; I am a product engineer using modern tools to build better
+            product slices faster.
           </p>
           <p>
             Originally from Mexico, I hold <strong>full EU citizenship</strong> and have a Bachelor of
