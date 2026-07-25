@@ -22,15 +22,15 @@ export default function About() {
       <div className="section-header">
         <div>
           <p className="section-label">About</p>
-          <h2 className="section-title">Frontend-focused product engineer</h2>
+          <h2 className="section-title">Hands-on software engineer</h2>
         </div>
       </div>
 
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a <strong>frontend-focused software engineer based in Berlin</strong> with 8+
-            years of professional experience building user-facing web applications, especially
+            I'm a <strong>software engineer based in Berlin</strong> with 8+ years of
+            professional experience building user-facing web applications, especially
             React/TypeScript product UI, forms, search and booking flows, interactive components,
             and polished product UX.
           </p>

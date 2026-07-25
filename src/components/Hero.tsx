@@ -4,16 +4,16 @@ export default function Hero() {
       <div className="hero-text">
         <p className="hero-kicker">Carlos Santisteban</p>
         <h1 className="hero-name">
-          Frontend<br />
+          Software<br />
           <span className="line2">Engineer</span>
         </h1>
         <p className="hero-tagline">
-          React and TypeScript engineer building polished user-facing web apps,
-          product UI, practical full-stack features, and AI-assisted development workflows.
+          Software engineer building polished user-facing web apps, React and TypeScript
+          interfaces, practical full-stack features, and AI-assisted development workflows.
         </p>
         <div className="hero-actions">
           <a href="#work" className="btn btn-primary">See selected work &rarr;</a>
-          <a href="/Carlos_Santisteban_CV_Frontend_Engineer.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Download CV</a>
+          <a href="/Carlos_Santisteban_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Download CV</a>
           <a href="mailto:carlos.santisteban@outlook.com" className="btn btn-ghost">Get in touch</a>
         </div>
         <div className="hero-stats">
@@ -40,7 +40,7 @@ export default function Hero() {
             <span className="visual-dot" />
           </div>
           <div className="visual-code">
-            <span className="cmt">// frontend product engineering</span><br />
+            <span className="cmt">// software engineering focus</span><br />
             <span className="kw">const</span> <span className="fn">strengths</span> = {'{'}<br />
             &nbsp;&nbsp;ui: [<span className="str">"forms"</span>, <span className="str">"flows"</span>, <span className="str">"systems"</span>],<br />
             &nbsp;&nbsp;stack: [<span className="str">"React"</span>, <span className="str">"TypeScript"</span>, <span className="str">"Node"</span>],<br />
