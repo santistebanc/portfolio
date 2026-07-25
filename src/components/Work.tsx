@@ -47,12 +47,12 @@ export default function Work() {
     <section className="section" id="work">
       <div className="section-header">
         <div>
-          <p className="section-label">Selected Product Work</p>
+          <p className="section-label">Portfolio Examples</p>
           <h2 className="section-title">Polished apps, product flows, and useful systems</h2>
           <p className="section-intro">
-            Independent web applications built with modern web tooling and AI-assisted development
-            workflows, focused on product UX, search and comparison flows, realtime interactions,
-            PWA behavior, deployment, and iteration.
+            Independent web applications that show how I approach product UI, data flows,
+            deployment, realtime interactions, and AI-assisted development. My production
+            experience comes from team work at Lingoda, Quandoo, Market Logic, and AISA.
           </p>
         </div>
       </div>
