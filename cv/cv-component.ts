@@ -68,7 +68,7 @@ const jobs = [
     company: 'Independent Web Applications',
     role: 'Web apps, UX, and AI-assisted delivery workflows',
     meta: 'Berlin | Apr 2025 - Present',
-    body: 'Stayed hands-on with React/TypeScript product work through independent web applications and prototypes. Built polished UI, search/filter and comparison flows, realtime interactions, PWA/offline behavior, data pipelines, deployment automation, debugging, and iteration while adopting AI-assisted development workflows. Used this period to explore modern web tooling, full-stack delivery patterns, and practical AI-assisted engineering while keeping ownership of architecture and final behavior.',
+    body: 'Designed and built independent React/TypeScript web applications across polished UI, search/filter and comparison flows, realtime interactions, PWA/offline behavior, data pipelines, deployment automation, debugging, and iteration. Applied modern web tooling, full-stack delivery patterns, and AI-assisted development workflows while owning architecture decisions, product direction, and final behavior.',
   },
   {
     company: 'Lingoda',
@@ -130,7 +130,7 @@ export const cvVariants: Record<CVVariantKey, CVVariant> = {
         ? {
             ...job,
             role: 'Frontend-focused web apps, UI systems, and AI-assisted delivery workflows',
-            body: 'Stayed hands-on with React/TypeScript product work through independent web applications and prototypes. Focused on polished UI, responsive layouts, search/filter and comparison flows, realtime interactions, PWA/offline behavior, loading states, and iterative UX improvements.',
+            body: 'Designed and built independent React/TypeScript web applications focused on polished UI, responsive layouts, search/filter and comparison flows, realtime interactions, PWA/offline behavior, loading states, and iterative UX improvements.',
           }
         : job
     ),
@@ -160,7 +160,7 @@ export const cvVariants: Record<CVVariantKey, CVVariant> = {
         ? {
             ...job,
             role: 'Full-stack web apps, deployment, and AI-assisted delivery workflows',
-            body: 'Stayed hands-on with full-stack web application work using modern JavaScript/TypeScript tooling. Built practical slices across UI, APIs, scraping/enrichment pipelines, realtime interactions, PWA/offline behavior, deployment automation, debugging, and iteration.',
+            body: 'Designed and built independent full-stack web applications using modern JavaScript/TypeScript tooling, with practical slices across UI, APIs, scraping/enrichment pipelines, realtime interactions, PWA/offline behavior, deployment automation, debugging, and iteration.',
           }
         : job
     ),
