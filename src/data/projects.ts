@@ -128,7 +128,7 @@ export const otherProjects: OtherProject[] = [
 export const skills = [
   {
     title: 'Product UI Engineering',
-    tags: ['JavaScript', 'TypeScript', 'React', 'UI Architecture', 'Forms', 'Design Systems'],
+    tags: ['JavaScript', 'TypeScript', 'React', 'UI Architecture', 'Forms', 'Design Systems', 'CSS'],
   },
   {
     title: 'Full-Stack Product Delivery',
@@ -147,18 +147,18 @@ export const skills = [
 export const experience = [
   {
     company: 'Independent Product Development',
-    role: 'Web apps, product UX, and AI-assisted delivery workflows',
+    role: 'Frontend-focused web apps, UX, and AI-assisted workflows',
     period: 'Apr 2025 - Present - Berlin',
   },
   {
     company: 'Lingoda',
-    role: 'Software Engineer - production learning platform',
+    role: 'Software Engineer - student learning and practice flows',
     period: 'Jun 2021 - Mar 2025 - Berlin',
     logoUrl: 'https://www.lingoda.com/favicon.ico',
   },
   {
     company: 'Quandoo',
-    role: 'Software Engineer - consumer reservation marketplace',
+    role: 'Software Engineer - consumer booking, SEO, and performance',
     period: 'Sep 2017 - Jan 2021 - Berlin',
   },
   {

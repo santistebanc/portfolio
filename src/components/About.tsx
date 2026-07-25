@@ -22,27 +22,29 @@ export default function About() {
       <div className="section-header">
         <div>
           <p className="section-label">About</p>
-          <h2 className="section-title">Hands-on product engineer</h2>
+          <h2 className="section-title">Frontend-focused product engineer</h2>
         </div>
       </div>
 
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a <strong>product-minded software engineer based in Berlin</strong> with 8+ years of
-            professional experience building user-facing web applications, especially UI systems,
-            forms, onboarding flows, interactive components, and polished product UX.
+            I'm a <strong>frontend-focused software engineer based in Berlin</strong> with 8+
+            years of professional experience building user-facing web applications, especially
+            React/TypeScript product UI, forms, search and booking flows, interactive components,
+            and polished product UX.
           </p>
           <p>
-            My strongest work sits where <strong>frontend craft, product judgment, and practical
-            full-stack ownership</strong> meet: shaping a feature, building the interface, connecting
-            the data, deploying it, and iterating until it feels useful.
+            My strongest work sits where <strong>frontend craft, product thinking, and practical
+            full-stack ownership</strong> meet: shaping a feature with product/design, building
+            the interface, integrating APIs and state, testing, releasing, and iterating until it
+            feels useful.
           </p>
           <p>
-            After Lingoda, I focused on independent product work: building and shipping web apps
-            with modern JavaScript/TypeScript tooling and AI-assisted development workflows. I am
-            not an ML researcher; I am a product engineer using modern tools to build better
-            product slices faster.
+            My production background includes student learning flows at Lingoda and consumer
+            booking, SEO, performance, and migration work at Quandoo. My independent apps are
+            portfolio examples of staying hands-on with modern JavaScript/TypeScript tooling,
+            practical full-stack delivery, and AI-assisted development workflows.
           </p>
           <p>
             Originally from Mexico, I hold <strong>full EU citizenship</strong> and have a Bachelor of

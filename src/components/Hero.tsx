@@ -4,16 +4,16 @@ export default function Hero() {
       <div className="hero-text">
         <p className="hero-kicker">Carlos Santisteban</p>
         <h1 className="hero-name">
-          Product-Minded<br />
-          <span className="line2">Software Engineer</span>
+          Frontend<br />
+          <span className="line2">Engineer</span>
         </h1>
         <p className="hero-tagline">
-          Product-minded software engineer building polished user-facing apps,
-          practical product features, and AI-assisted development workflows.
+          React and TypeScript engineer building polished user-facing web apps,
+          product UI, practical full-stack features, and AI-assisted development workflows.
         </p>
         <div className="hero-actions">
           <a href="#work" className="btn btn-primary">See selected work &rarr;</a>
-          <a href="/Carlos_Santisteban_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Download CV</a>
+          <a href="/Carlos_Santisteban_CV_Frontend_Engineer.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Download CV</a>
           <a href="mailto:carlos.santisteban@outlook.com" className="btn btn-ghost">Get in touch</a>
         </div>
         <div className="hero-stats">
@@ -22,12 +22,12 @@ export default function Hero() {
             <div className="stat-label">professional product work</div>
           </div>
           <div className="stat">
-            <div className="stat-num">UI <span className="stat-unit">+ Product</span></div>
-            <div className="stat-label">user-facing engineering focus</div>
+            <div className="stat-num">React <span className="stat-unit">+ TypeScript</span></div>
+            <div className="stat-label">frontend product focus</div>
           </div>
           <div className="stat">
             <div className="stat-num">AI <span className="stat-unit">Workflows</span></div>
-            <div className="stat-label">independent full-stack apps</div>
+            <div className="stat-label">practical developer productivity</div>
           </div>
         </div>
       </div>
@@ -40,11 +40,11 @@ export default function Hero() {
             <span className="visual-dot" />
           </div>
           <div className="visual-code">
-            <span className="cmt">// product engineering focus</span><br />
+            <span className="cmt">// frontend product engineering</span><br />
             <span className="kw">const</span> <span className="fn">strengths</span> = {'{'}<br />
-            &nbsp;&nbsp;ui: [<span className="str">"systems"</span>, <span className="str">"forms"</span>, <span className="str">"flows"</span>],<br />
+            &nbsp;&nbsp;ui: [<span className="str">"forms"</span>, <span className="str">"flows"</span>, <span className="str">"systems"</span>],<br />
             &nbsp;&nbsp;stack: [<span className="str">"React"</span>, <span className="str">"TypeScript"</span>, <span className="str">"Node"</span>],<br />
-            &nbsp;&nbsp;delivery: [<span className="str">"prototype"</span>, <span className="str">"slice"</span>, <span className="str">"ship"</span>],<br />
+            &nbsp;&nbsp;delivery: [<span className="str">"plan"</span>, <span className="str">"build"</span>, <span className="str">"release"</span>],<br />
             &nbsp;&nbsp;ai: <span className="str">"practical, reviewed, useful"</span><br />
             {'}'}
           </div>
