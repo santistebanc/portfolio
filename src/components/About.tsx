@@ -43,8 +43,8 @@ export default function About() {
           <p>
             My production background includes student learning flows at Lingoda and consumer
             booking, SEO, performance, and migration work at Quandoo. My independent apps are
-            portfolio examples of staying hands-on with modern JavaScript/TypeScript tooling,
-            practical full-stack delivery, and AI-assisted development workflows.
+            portfolio examples of modern JavaScript/TypeScript product development, practical
+            full-stack delivery, and AI-assisted development workflows.
           </p>
           <p>
             Originally from Mexico, I hold <strong>full EU citizenship</strong> and have a Bachelor of
