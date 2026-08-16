@@ -30,7 +30,7 @@ export const featuredProject = {
   tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Fuse.js', 'GitHub Actions'],
   screenshot: '/ovberlin-screenshot.png',
   screenshotAlt: 'OV Berlin cinema listings app',
-  liveUrl: 'https://ovberlin.site',
+  liveUrl: 'https://ovberlin.online',
   githubUrl: 'https://github.com/santistebanc/berlin-cinema',
 }
 
