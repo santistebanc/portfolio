@@ -54,12 +54,10 @@ test('a CV release updates only the canonical CV after its existing fingerprint 
   assert.deepEqual(fs.readdirSync(path.join(f.root, 'public')), ['Carlos_Santisteban_CV.pdf']);
 });
 
-test('a German CV release leaves the public English CV unchanged', (t) => {
+test('a German CV release is rejected and leaves the public English CV unchanged', (t) => {
   const f = fixture(t, 'cv-german'), english = path.join(f.root, 'public', 'Carlos_Santisteban_CV.pdf');
   fs.writeFileSync(english, 'Existing English CV');
-  const inspect = importBundle(f.input, { root: f.root });
-  assert.equal(inspect.target, 'Carlos_Santisteban_CV_DE.pdf');
-  importBundle(f.input, { root: f.root, apply: true, expectedCurrent: 'missing' });
+  assert.throws(() => importBundle(f.input, { root: f.root, apply: true, expectedCurrent: 'missing' }), /Unsupported release format or channel/);
   assert.equal(fs.readFileSync(english, 'utf8'), 'Existing English CV');
-  assert.equal(fs.readFileSync(path.join(f.root, 'public', inspect.target)).subarray(0, 5).toString(), '%PDF-');
+  assert.deepEqual(fs.readdirSync(path.join(f.root, 'public')), ['Carlos_Santisteban_CV.pdf']);
 });

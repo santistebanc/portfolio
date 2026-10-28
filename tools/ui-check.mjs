@@ -28,8 +28,8 @@ try {
   }
   const paths = await page.locator('a[href^="/"], img[src^="/"]').evaluateAll((elements) => [...new Set(elements.map((element) => element.getAttribute('href') || element.getAttribute('src')))]);
   assert.ok(paths.includes('/Carlos_Santisteban_CV.pdf'));
-  assert.ok(paths.includes('/Carlos_Santisteban_CV_DE.pdf'));
-  assert.equal(paths.filter((file) => file.endsWith('.pdf')).length, 2);
+  assert.ok(!paths.includes('/Carlos_Santisteban_CV_DE.pdf'));
+  assert.equal(paths.filter((file) => file.endsWith('.pdf')).length, 1);
   for (const file of paths) {
     const response = await page.request.get(url + file);
     assert.equal(response.status(), 200, 'Missing public asset: ' + file);
@@ -43,7 +43,7 @@ try {
   await page.keyboard.press('Escape');
   assert.equal(await page.getByRole('dialog', { name: 'Tweaks' }).count(), 0);
   assert.deepEqual(exceptions, []);
-  console.log('Public UI passed: design 5; four widths; day/night themes; two real CVs; local assets; preferences; no runtime exceptions.');
+  console.log('Public UI passed: design 5; four widths; day/night themes; only the English CV; local assets; preferences; no runtime exceptions.');
 } finally {
   await browser?.close();
   await server.close();

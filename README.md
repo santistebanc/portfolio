@@ -17,10 +17,10 @@ npm run build
 ```
 
 - `src/App.tsx` assembles the single homepage.
-- `src/content.ts` contains presentation copy, section navigation and the two public CV links.
+- `src/content.ts` contains presentation copy, section navigation and the default public English CV link.
 - `src/data/projects.ts` contains public project, skill and experience records.
 - `src/styles.css` and `src/Tweaks.tsx` provide the Wayfinding theme and visitor preferences.
-- `public/` contains only reviewed assets, one English CV and one German CV.
+- `public/` contains only reviewed assets, only the default English CV.
 - `tools/` validates public files and imports reviewed career exports; it does not read private facts.
 
 All project screenshots are local. The page loads Archivo and JetBrains Mono from Google Fonts, with system fallbacks. Public files are explicitly allowlisted in `public-files.json`; adding an asset requires updating that list.
@@ -47,7 +47,7 @@ npm run build
 
 The importer rejects private metadata, extra files, symlinks and hash mismatches. It never commits, pushes or deploys. Export hashes verify integrity, not a digital signature of approval: import only the bundle you intentionally exported.
 
-English CV channels replace `/Carlos_Santisteban_CV.pdf`; the German channel replaces `/Carlos_Santisteban_CV_DE.pdf`. A portfolio narrative export writes `/career/portfolio.html`, independently of the homepage presentation and project case studies. No public build needs the private repo, the career store or credentials for either.
+English CV channels replace `/Carlos_Santisteban_CV.pdf`. German CVs remain private in Career Desk and are rejected by the public importer. A portfolio narrative export writes `/career/portfolio.html`, independently of the homepage presentation and project case studies. No public build needs the private repo, the career store or credentials for either.
 
 ## Deployment
 
