@@ -6,8 +6,11 @@ import Skills from './components/Skills'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import DecoPattern from './components/DecoPattern'
+import { useReveal } from './hooks/useReveal'
 
 export default function App() {
+  useReveal()
+
   return (
     <>
       <DecoPattern />
