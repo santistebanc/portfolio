@@ -1,15 +1,14 @@
-node_modules
-tools/career-dashboard/dist/
-.taste-skill/
-dist
-career-profile.md
-career-cv-variants.md
-interview-prep.md
+node_modules/
+dist/
+*.tsbuildinfo
+.env
 
-# Private working material and local verification output
+# Keep private working material out of the public repository.
 private/
 tmp/
 output/
 .griller/
-*.tsbuildinfo
-redesigns/**/dist/
+.taste-skill/
+career-profile.md
+career-cv-variants.md
+interview-prep.md
