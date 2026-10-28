@@ -1,5 +1,5 @@
 import { TechIcon } from './components/TechIcon'
-import { cta, cvMain, cvVariants, person, skills } from './content'
+import { cta, cvMain, person, skills } from './content'
 import { Arrow, ExternalLink, SectionHead } from './ui'
 
 export function Skills() {
@@ -61,17 +61,6 @@ export function Contact() {
             <span>{cvMain.label}</span>
             <span className="cv-format">PDF</span>
           </ExternalLink>
-          <p className="cv-sub" id="cv-variants-label">Available languages</p>
-          <ul className="cv-list" aria-labelledby="cv-variants-label">
-            {cvVariants.map((v) => (
-              <li key={v.href}>
-                <ExternalLink href={v.href}>
-                  <span>{v.label}</span>
-                  <span className="cv-format">PDF</span>
-                </ExternalLink>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

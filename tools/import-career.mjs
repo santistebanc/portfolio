@@ -3,7 +3,7 @@ import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
-const channels = ['portfolio', 'cv-frontend', 'cv-fullstack', 'cv-product', 'cv-ai', 'cv-german'];
+const channels = ['portfolio', 'cv-frontend', 'cv-fullstack', 'cv-product', 'cv-ai'];
 export const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const need = (value, message) => { if (!value) throw new Error(message); };
 function exactKeys(value, keys) {
@@ -44,7 +44,7 @@ const escapeHtml = (text) => text.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<
 export function importBundle(directory, { root, expectedCurrent, apply = false } = {}) {
   const bundle = readBundle(directory), publicRoot = path.join(root, 'public');
   const isProfile = bundle.manifest.channel === 'portfolio';
-  const relative = isProfile ? 'career/portfolio.html' : bundle.manifest.channel === 'cv-german' ? 'Carlos_Santisteban_CV_DE.pdf' : 'Carlos_Santisteban_CV.pdf';
+  const relative = isProfile ? 'career/portfolio.html' : 'Carlos_Santisteban_CV.pdf';
   const target = path.join(publicRoot, relative);
   // Directory ancestors may not redirect publication through a symlink/junction.
   const resolvedPublic = fs.realpathSync(publicRoot);

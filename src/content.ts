@@ -77,12 +77,6 @@ export const cta = {
 
 export const cvMain = { label: 'Download CV', href: '/Carlos_Santisteban_CV.pdf' }
 
-/** The only two public CV downloads. Role templates remain in Career Desk. */
-export const cvVariants = [
-  { label: 'CV in English', href: '/Carlos_Santisteban_CV.pdf' },
-  { label: 'Lebenslauf auf Deutsch', href: '/Carlos_Santisteban_CV_DE.pdf' },
-] as const
-
 export const sections = [
   { id: 'work', line: '1', label: 'Work' },
   { id: 'ai-workflow', line: '2', label: 'AI workflow' },

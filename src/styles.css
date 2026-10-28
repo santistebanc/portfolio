@@ -1110,34 +1110,6 @@ section[id] {
   letter-spacing: 0.08em;
   opacity: 0.8;
 }
-.cv-sub {
-  margin-top: var(--s4);
-  font: 500 12px/1 var(--mono);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.cv-list {
-  margin-top: var(--s2);
-}
-.cv-list li {
-  border-bottom: 1px solid rgb(18 18 18 / 0.28);
-}
-.cv-list a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s3);
-  min-height: 44px;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-}
-.cv-list a:hover > span:first-child {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-}
-
 /* ---------- Footer ---------- */
 .footer {
   background: var(--bar);
