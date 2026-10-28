@@ -10,7 +10,6 @@ export interface Project {
   liveUrl?: string
   liveLabel?: string
   githubUrl: string
-  gradClass: GradClass
 }
 
 export interface OtherProject {
@@ -45,7 +44,6 @@ export const projects: Project[] = [
     liveUrl: 'https://flyscan.site',
     liveLabel: 'Live ->',
     githubUrl: 'https://github.com/santistebanc/flyscan',
-    gradClass: 'grad-1',
   },
   {
     id: 'rankzap',
@@ -57,7 +55,6 @@ export const projects: Project[] = [
     liveUrl: 'https://rankzap.site',
     liveLabel: 'Live ->',
     githubUrl: 'https://github.com/santistebanc/rankzap',
-    gradClass: 'grad-2',
   },
   {
     id: 'snapquiz',
@@ -69,7 +66,6 @@ export const projects: Project[] = [
     liveUrl: 'https://snapquiz.fun/',
     liveLabel: 'Live ->',
     githubUrl: 'https://github.com/santistebanc/snapquiz',
-    gradClass: 'grad-3',
   }
 ]
 
@@ -154,7 +150,6 @@ export const experience = [
     company: 'Lingoda',
     role: 'Software Engineer - student learning and practice flows',
     period: 'Jun 2021 - Mar 2025 - Berlin',
-    logoUrl: 'https://www.lingoda.com/favicon.ico',
   },
   {
     company: 'Quandoo',
