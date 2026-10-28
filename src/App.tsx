@@ -1,28 +1,29 @@
-import Hero from './components/Hero'
-import Work from './components/Work'
-import About from './components/About'
-import AIWorkflow from './components/AIWorkflow'
-import Skills from './components/Skills'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
-import DecoPattern from './components/DecoPattern'
-import { useReveal } from './hooks/useReveal'
+import { Contact, Footer, Skills } from './Contact'
+import { Hero, Topbar } from './Hero'
+import { Method } from './Method'
+import { Route } from './Route'
+import { Tweaks } from './Tweaks'
+import { useReveal } from './useReveal'
+import { Work } from './Work'
 
 export default function App() {
   useReveal()
-
   return (
     <>
-      <DecoPattern />
-      <main>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Topbar />
+      <main id="main" tabIndex={-1}>
         <Hero />
         <Work />
-        <AIWorkflow />
-        <About />
+        <Method />
+        <Route />
+        <Skills />
+        <Contact />
       </main>
-      <Skills />
-      <CTA />
       <Footer />
+      <Tweaks />
     </>
   )
 }

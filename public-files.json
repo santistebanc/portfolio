@@ -1,0 +1,15 @@
+{
+  "required": [
+    "CNAME",
+    "Carlos_Santisteban_CV.pdf",
+    "Carlos_Santisteban_CV_DE.pdf",
+    "favicon.svg",
+    "flyscan-screenshot.webp",
+    "ovberlin-screenshot.webp",
+    "rankzap-screenshot.png",
+    "snapquiz-screenshot.webp"
+  ],
+  "optional": [
+    "career/portfolio.html"
+  ]
+}
