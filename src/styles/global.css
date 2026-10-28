@@ -25,6 +25,9 @@ html {
   --radius-md: 0px;
   --radius-lg: 0px;
   --radius-xl: 0px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -176,7 +179,12 @@ body {
   font-weight: 600;
   text-decoration: none;
   padding: 15px 28px;
-  transition: all 0.25s;
+  transition:
+    background 160ms var(--ease-out),
+    border-color 160ms var(--ease-out),
+    color 160ms var(--ease-out),
+    transform 160ms var(--ease-out),
+    box-shadow 160ms var(--ease-out);
   font-family: var(--font-body);
 }
 
@@ -185,10 +193,12 @@ body {
   color: #0b1220;
 }
 
-.btn-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
 }
 
 .btn-ghost {
@@ -200,6 +210,11 @@ body {
 .btn-ghost:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* Declared after the hover rules so a press wins over a hover lift. */
+.btn:active {
+  transform: scale(0.97);
 }
 
 .hero-stats {
@@ -281,11 +296,6 @@ body {
   left: -24px;
   transform: rotate(-3deg);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(0.85); }
 }
 
 /* ── Section ───────────────────────────────────────────────── */
@@ -441,13 +451,18 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition:
+    transform 200ms var(--ease-out),
+    box-shadow 200ms var(--ease-out),
+    border-color 200ms var(--ease-out);
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
-  border-color: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    border-color: var(--accent);
+  }
 }
 
 .card-image {
@@ -462,11 +477,13 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: top;
-  transition: transform 0.5s;
+  transition: transform 260ms var(--ease-out);
 }
 
-.project-card:hover .card-image img {
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .card-image img {
+    transform: scale(1.03);
+  }
 }
 
 /* Gradient fallbacks */
@@ -819,14 +836,23 @@ body {
   background: var(--accent);
   padding: 18px 36px;
   text-decoration: none;
-  transition: all 0.25s;
+  transition:
+    background 160ms var(--ease-out),
+    transform 160ms var(--ease-out),
+    box-shadow 160ms var(--ease-out);
   font-family: var(--font-body);
 }
 
-.cta-btn:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+@media (hover: hover) and (pointer: fine) {
+  .cta-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  }
+}
+
+.cta-btn:active {
+  transform: scale(0.97);
 }
 
 .cta-links {
@@ -874,6 +900,47 @@ body {
 }
 
 .footer-nav a:hover { color: var(--fg); }
+
+/* ── Focus ──────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ── Scroll reveal ────────────────────────
+   data-reveal is applied by useReveal(), so with JS off nothing
+   is ever left hidden. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 300ms var(--ease-out),
+    transform 300ms var(--ease-out);
+  transition-delay: calc(var(--reveal-i, 0) * 60ms);
+}
+
+[data-reveal='in'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced motion ───────────────────────
+   Fewer and gentler, not zero: keep opacity and colour, drop movement. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn:active,
+  .cta-btn:active,
+  .btn-primary:hover,
+  .cta-btn:hover,
+  .project-card:hover,
+  .project-card:hover .card-image img,
+  [data-reveal] {
+    transform: none;
+  }
+}
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1100px) {

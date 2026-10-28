@@ -7,9 +7,16 @@
     "dev": "vite",
     "build": "npm run generate-cv && tsc -b && vite build",
     "preview": "vite preview",
-    "generate-cv": "tsx cv/generate-cv.ts"
+    "generate-cv": "tsx cv/generate-cv.ts",
+    "profile": "node .agents/skills/career-profile-builder/scripts/profile.mjs",
+    "test:profile": "node --test tools/profile-builder/profile.test.mjs",
+    "career:build": "vite build --config tools/career-dashboard/vite.config.mjs",
+    "career": "node tools/career-dashboard/cli.mjs serve",
+    "career:cli": "node tools/career-dashboard/cli.mjs",
+    "test:career": "node --test tools/career-dashboard/hub.test.mjs"
   },
   "dependencies": {
+    "@fontsource/manrope": "^5.3.0",
     "@fontsource/outfit": "^5.2.8",
     "@react-pdf/renderer": "^4.5.1",
     "react": "^19.0.0",
