@@ -43,7 +43,7 @@ export const projects: Project[] = [
     screenshotAlt: 'Flyscan flight comparison',
     liveUrl: 'https://flyscan.site',
     liveLabel: 'Live ->',
-    githubUrl: 'https://github.com/santistebanc/flyscan',
+    githubUrl: 'https://github.com/santistebanc/flyscan-old',
   },
   {
     id: 'rankzap',
