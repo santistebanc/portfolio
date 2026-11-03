@@ -46,8 +46,8 @@ export function Route() {
                 <dd>Berlin, Germany</dd>
               </div>
               <div>
-                <dt>Origin</dt>
-                <dd>Mexico, with full EU citizenship</dd>
+                <dt>Nationality</dt>
+                <dd>Mexican / Spanish</dd>
               </div>
               <div>
                 <dt>Education</dt>
