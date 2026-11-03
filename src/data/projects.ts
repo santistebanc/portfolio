@@ -23,26 +23,26 @@ export interface OtherProject {
 }
 
 export const featuredProject = {
-  title: 'OV Berlin - Cinema Listings',
+  title: 'Flyscan - Flight Metasearch',
   description:
-    'Public PWA for finding original-version and subtitled screenings in Berlin cinemas. A Node.js pipeline merges two listing sources, resolves each film and cinema, and adds ratings, trailers and maps; the app offers fuzzy search, filters, grid and stacked showtime views, and works offline. Built and deployed end to end.',
-  tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Node.js', 'PWA', 'GitHub Actions'],
-  screenshot: '/ovberlin-screenshot.webp',
-  screenshotAlt: 'OV Berlin film listings with posters, ratings and screening formats',
-  liveUrl: 'https://ovberlin.online',
-  githubUrl: 'https://github.com/santistebanc/berlin-cinema',
+    'Flight metasearch app for the web and Windows. It searches several sources at once and merges the same flight from different sellers into one row, so price differences show. A Python service with a built-in queue keeps results in SQLite, so searches answer instantly from stored data and fetch only what is missing. The web version runs on flyscan.site; the Windows app adds more sources and signed automatic updates.',
+  tech: ['Python', 'Flask', 'SQLite', 'React', 'TypeScript', 'Tauri', 'Docker'],
+  screenshot: '/flyscan-screenshot.webp',
+  screenshotAlt: 'Flyscan round-trip results with flight timelines and the selected flight in a side panel',
+  liveUrl: 'https://flyscan.site',
+  githubUrl: 'https://github.com/santistebanc/flyscan',
 }
 
 export const projects: Project[] = [
   {
-    id: 'flyscan',
-    title: 'Flyscan',
-    description: 'Flight metasearch app for the web and Windows. It searches several sources at once and merges the same flight from different sellers into one row, so price differences show. A Python service with a built-in queue keeps results in SQLite, so searches answer instantly from stored data and fetch only what is missing.',
-    tech: ['Python', 'Flask', 'SQLite', 'React', 'TypeScript', 'Tauri', 'Docker'],
-    screenshot: '/flyscan-screenshot.webp',
-    screenshotAlt: 'Flyscan round-trip results with flight timelines and the selected flight in a side panel',
-    liveUrl: 'https://flyscan.site',
-    githubUrl: 'https://github.com/santistebanc/flyscan',
+    id: 'ovberlin',
+    title: 'OV Berlin',
+    description: 'Public PWA for finding original-version and subtitled screenings in Berlin cinemas. A Node.js pipeline merges two listing sources, resolves each film and cinema, and adds ratings, trailers and maps; the app offers fuzzy search, filters, grid and stacked showtime views, and works offline.',
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Node.js', 'PWA', 'GitHub Actions'],
+    screenshot: '/ovberlin-screenshot.webp',
+    screenshotAlt: 'OV Berlin film listings with posters, ratings and screening formats',
+    liveUrl: 'https://ovberlin.online',
+    githubUrl: 'https://github.com/santistebanc/berlin-cinema',
   },
   {
     id: 'splitnext',
