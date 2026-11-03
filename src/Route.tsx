@@ -47,7 +47,7 @@ export function Route() {
               </div>
               <div>
                 <dt>Nationality</dt>
-                <dd>Mexican / Spanish</dd>
+                <dd>Mexican / Spanish, with full EU citizenship</dd>
               </div>
               <div>
                 <dt>Education</dt>
