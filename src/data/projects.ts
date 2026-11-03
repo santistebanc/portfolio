@@ -25,7 +25,7 @@ export interface OtherProject {
 export const featuredProject = {
   title: 'Flyscan - Flight Metasearch',
   description:
-    'Flight metasearch app for the web and Windows. It searches several sources at once and merges the same flight from different sellers into one row, so price differences show. A Python service with a built-in queue keeps results in SQLite, so searches answer instantly from stored data and fetch only what is missing. The web version runs on flyscan.site; the Windows app adds more sources and signed automatic updates.',
+    'Flight metasearch app for the web and desktop (Windows, macOS and Linux). It searches several sources at once and merges the same flight from different sellers into one row, so price differences show. A Python service with a built-in queue keeps results in SQLite, so searches answer instantly from stored data and fetch only what is missing. The web version runs on flyscan.site; the desktop app adds more sources and signed automatic updates.',
   tech: ['Python', 'Flask', 'SQLite', 'React', 'TypeScript', 'Tauri', 'Docker'],
   screenshot: '/flyscan-screenshot.webp',
   screenshotAlt: 'Flyscan round-trip results with flight timelines and the selected flight in a side panel',
