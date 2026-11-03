@@ -61,9 +61,11 @@ export function Work() {
                       {cleanLabel(p.liveLabel, 'Live')} <Arrow />
                     </ExternalLink>
                   ) : null}
-                  <ExternalLink href={p.githubUrl}>
-                    GitHub <Arrow />
-                  </ExternalLink>
+                  {p.githubUrl ? (
+                    <ExternalLink href={p.githubUrl}>
+                      GitHub <Arrow />
+                    </ExternalLink>
+                  ) : null}
                 </div>
               </article>
             </li>
@@ -96,9 +98,11 @@ export function Work() {
                         <span className="sr-only">: {p.title}</span>
                       </ExternalLink>
                     ) : null}
-                    <ExternalLink href={p.githubUrl}>
-                      GitHub<span className="sr-only">: {p.title}</span>
-                    </ExternalLink>
+                    {p.githubUrl ? (
+                      <ExternalLink href={p.githubUrl}>
+                        GitHub<span className="sr-only">: {p.title}</span>
+                      </ExternalLink>
+                    ) : null}
                   </td>
                 </tr>
               ))}

@@ -17,23 +17,23 @@ npm run build
 ```
 
 - `src/App.tsx` assembles the single homepage.
-- `src/content.ts` contains presentation copy, section navigation and the default public English CV link.
+- `src/content.ts` merges approved Career Desk overrides from `src/career-content.json` with the existing presentation in `src/base-content.ts`. Section navigation and the default English CV link stay with the portfolio.
 - `src/data/projects.ts` contains public project, skill and experience records.
 - `src/styles.css` and `src/Tweaks.tsx` provide the Wayfinding theme and visitor preferences.
-- `public/` contains only reviewed assets, only the default English CV.
+- `public/` contains only reviewed assets and one English CV (currently the Product Engineer CV).
 - `tools/` validates public files and imports reviewed career exports; it does not read private facts.
 
 All project screenshots are local. The page loads Archivo and JetBrains Mono from Google Fonts, with system fallbacks. Public files are explicitly allowlisted in `public-files.json`; adding an asset requires updating that list.
 
-## Import an approved Career Desk release
+## Career Desk content
 
-In the private career-desk checkout, review and approve the exact text, then export a current release:
+Career Desk v2 is agent-first and maintains a separate private profile. Agents save a versioned portfolio document there with exact public content overrides, inspect the destination, obtain exact-content approval, then apply using the observed destination hash. The resulting `src/career-content.json` changes homepage wording without importing private profile data or changing the design. Its initial empty object preserves the entire existing page. Arrays replace a section's list; object sections merge with the baseline. Review with `git diff`, tests, the public-file check and the production build. Publication through Career Desk never commits, pushes or deploys.
 
-```powershell
-npm run career:cli -- bundle --id release_ID --out exports/public-release
-```
+English CV publication targets `public/Carlos_Santisteban_CV.pdf` (published from Career Desk with `primary: true`, currently the Product Engineer CV). The public-file check would also accept extra English variants under `public/cv/`, but none are published. Other-language documents remain private. The public build never reads the private Career Desk store. See the private app's agent CLI `schema` for `document.save`, `publication.inspect`, `document.approve` and `publication.apply`.
 
-In this public checkout:
+### Legacy bundle imports
+
+The old bundle importer remains available for already exported v1 bundles. In this public checkout:
 
 ```powershell
 npm run import:career -- ../career-desk/exports/public-release

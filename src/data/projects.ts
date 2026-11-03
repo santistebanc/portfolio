@@ -9,7 +9,7 @@ export interface Project {
   screenshotAlt: string
   liveUrl?: string
   liveLabel?: string
-  githubUrl: string
+  githubUrl?: string
 }
 
 export interface OtherProject {
@@ -19,16 +19,16 @@ export interface OtherProject {
   tech: string[]
   liveUrl?: string
   liveLabel?: string
-  githubUrl: string
+  githubUrl?: string
 }
 
 export const featuredProject = {
   title: 'OV Berlin - Cinema Listings',
   description:
-    'Public PWA for finding original-version cinema screenings in Berlin, with automated data refresh, rating/trailer enrichment, offline support, maps, and fast search/filter UX. Built and deployed end to end.',
-  tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Fuse.js', 'GitHub Actions'],
+    'Public PWA for finding original-version and subtitled screenings in Berlin cinemas. A Node.js pipeline merges two listing sources, resolves each film and cinema, and adds ratings, trailers and maps; the app offers fuzzy search, filters, grid and stacked showtime views, and works offline. Built and deployed end to end.',
+  tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Node.js', 'PWA', 'GitHub Actions'],
   screenshot: '/ovberlin-screenshot.webp',
-  screenshotAlt: 'OV Berlin cinema listings app',
+  screenshotAlt: 'OV Berlin film listings with posters, ratings and screening formats',
   liveUrl: 'https://ovberlin.online',
   githubUrl: 'https://github.com/santistebanc/berlin-cinema',
 }
@@ -37,45 +37,50 @@ export const projects: Project[] = [
   {
     id: 'flyscan',
     title: 'Flyscan',
-    description: 'Flight comparison interface that aggregates multiple providers into a filterable itinerary view, with emphasis on search UX, loading states, result comparison, and deployment.',
-    tech: ['React', 'Bun', 'Vite', 'TypeScript'],
+    description: 'Flight metasearch app for the web and Windows. It searches several sources at once and merges the same flight from different sellers into one row, so price differences show. A Python service with a built-in queue keeps results in SQLite, so searches answer instantly from stored data and fetch only what is missing.',
+    tech: ['Python', 'Flask', 'SQLite', 'React', 'TypeScript', 'Tauri', 'Docker'],
     screenshot: '/flyscan-screenshot.webp',
-    screenshotAlt: 'Flyscan flight comparison',
+    screenshotAlt: 'Flyscan round-trip results with flight timelines and the selected flight in a side panel',
     liveUrl: 'https://flyscan.site',
-    liveLabel: 'Live ->',
-    githubUrl: 'https://github.com/santistebanc/flyscan-old',
+    githubUrl: 'https://github.com/santistebanc/flyscan',
+  },
+  {
+    id: 'splitnext',
+    title: 'Splitnext',
+    description: 'Offline-first shared-expense app for groups. Changes apply instantly, sync in real time across devices and wait on the device while offline. Each group lives in its own SQLite Durable Object, and expenses split equally, by shares or by exact amounts with fair rounding.',
+    tech: ['React Native (Expo)', 'TypeScript', 'Hono', 'Cloudflare Durable Objects', 'D1', 'WebSockets'],
+    screenshot: '/splitnext-screenshot.webp',
+    screenshotAlt: 'Splitnext group balances, an expense split by shares, and the settle-up plan',
+    githubUrl: 'https://github.com/santistebanc/splitnext',
   },
   {
     id: 'rankzap',
     title: 'RankZap',
-    description: 'Real-time mobile-first ranked-voting product. Drag to rank, submit, and watch live tallies across Borda, Dowdall, and Copeland modes.',
-    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind'],
+    description: 'Real-time, mobile-first ranked-voting app. Share a poll by link or QR code, drag the options into order, and watch live tallies by Borda count, Dowdall or Copeland.',
+    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind', 'PartyKit'],
     screenshot: '/rankzap-screenshot.png',
-    screenshotAlt: 'RankZap ranked voting app',
+    screenshotAlt: 'RankZap poll results ranked by votes',
     liveUrl: 'https://rankzap.site',
     liveLabel: 'Live ->',
     githubUrl: 'https://github.com/santistebanc/rankzap',
   },
-  {
-    id: 'snapquiz',
-    title: 'SnapQuiz',
-    description: 'Realtime multiplayer quiz for groups on a shared screen and mobile devices, with AI-generated questions, room coordination, and voice or tap answering flows.',
-    tech: ['React', 'TypeScript', 'PartyKit', 'OpenAI'],
-    screenshot: '/snapquiz-screenshot.webp',
-    screenshotAlt: 'SnapQuiz multiplayer quiz',
-    liveUrl: 'https://snapquiz.fun/',
-    liveLabel: 'Live ->',
-    githubUrl: 'https://github.com/santistebanc/snapquiz',
-  }
 ]
 
 export const otherProjects: OtherProject[] = [
   {
-    id: 'room-server',
-    title: 'Room Server',
-    description: 'Generic PartyKit backend for realtime key/value state. CAS operations, TTL, presence, broadcast, schema validation, and scheduling - used by RankZap and SnapQuiz.',
-    tech: ['PartyKit', 'TypeScript', 'WebSockets', 'KV'],
-    githubUrl: 'https://github.com/santistebanc/room-server',
+    id: 'snapquiz',
+    title: 'SnapQuiz',
+    description: 'Real-time multiplayer party quiz. A shared screen hosts the game, players answer from their phones by tapping or speaking, and AI generates questions for any category.',
+    tech: ['PartyKit', 'React', 'TypeScript', 'Vercel AI SDK', 'OpenAI'],
+    githubUrl: 'https://github.com/santistebanc/snapquiz',
+  },
+  {
+    id: 'cuecam',
+    title: 'CueCam',
+    description: 'Android app for recording videos to a song. It plays the song from a cue point on the phone, a TV or a speaker while the camera records, then syncs the take and replaces the room audio with the clean track.',
+    tech: ['Kotlin', 'Jetpack Compose', 'Android'],
+    liveUrl: 'https://github.com/santistebanc/cuecam-releases/releases/latest',
+    liveLabel: 'Android download ->',
   },
   {
     id: 'treem',
@@ -87,83 +92,59 @@ export const otherProjects: OtherProject[] = [
     githubUrl: 'https://github.com/santistebanc/treem',
   },
   {
-    id: 'multikey',
-    title: 'Multikey',
-    description: 'TypeScript library for multi-dimensional mapping. MultiMap, UniqueList, UniqueSet - efficient structures for caching and hierarchical lookups.',
-    tech: ['TypeScript', 'npm', 'Library'],
-    githubUrl: 'https://github.com/santistebanc/multikey',
-  },
-  {
     id: 'minitanks',
     title: 'MiniTanks',
     description: 'Tank game built in university, now playable in the browser via Ruffle. Survive enemy waves, collect crates, and use cover.',
     tech: ['Flash', 'ActionScript 3', 'Ruffle'],
     liveUrl: 'https://santistebanc.github.io/miniTanks/',
     liveLabel: 'Play ->',
-    githubUrl: 'https://github.com/santistebanc/minitanks',
-  },
-  {
-    id: 'minigames',
-    title: 'Minigames',
-    description: 'Fast-paced mobile arcade built with Phaser.js. Each run drops you into rotating 10-second challenges - survive, react, score.',
-    tech: ['Phaser.js', 'JavaScript', 'Mobile'],
-    liveUrl: 'https://santistebanc.github.io/minigames/',
-    liveLabel: 'Play ->',
-    githubUrl: 'https://github.com/santistebanc/minigames',
-  },
-  {
-    id: 'supercar',
-    title: 'Super Kart Racing',
-    description: 'Timed kart racing game with AI-driven opponents. Choose laps and tune acceleration, speed, and steering. Highscores saved in a leaderboard.',
-    tech: ['Unity', 'C#', 'Game Dev'],
-    githubUrl: 'https://github.com/santistebanc/supercar',
+    githubUrl: 'https://github.com/santistebanc/miniTanks',
   },
 ]
 
-
 export const skills = [
   {
-    title: 'Product UI Engineering',
-    tags: ['JavaScript', 'TypeScript', 'React', 'UI Architecture', 'Forms', 'Design Systems', 'CSS'],
+    title: 'Frontend',
+    tags: ['JavaScript', 'TypeScript', 'React', 'React Native (Expo)', 'Tauri', 'Redux', 'Zustand', 'React Query', 'GraphQL / Apollo', 'Tailwind CSS', 'Design Systems', 'PWA', 'SSR'],
   },
   {
-    title: 'Full-Stack Product Delivery',
-    tags: ['Node.js', 'REST APIs', 'GraphQL', 'PostgreSQL', 'WebSockets', 'PWA'],
+    title: 'Backend & Data',
+    tags: ['Node.js', 'Hono', 'Express', 'Python', 'REST / OpenAPI', 'WebSockets', 'PostgreSQL', 'SQLite', 'Cloudflare D1', 'Durable Objects', 'Supabase'],
+  },
+  {
+    title: 'Quality & Delivery',
+    tags: ['Vitest', 'Playwright', 'End-to-end Tests', 'Docker', 'GitHub Actions', 'Git', 'Monorepos', 'Sentry', 'Datadog'],
   },
   {
     title: 'AI-Assisted Development',
-    tags: ['AI SDKs', 'AI Workflows', 'Agent Skills', 'MCPs', 'LLM APIs', 'Prototyping'],
-  },
-  {
-    title: 'Quality & Release',
-    tags: ['Playwright', 'Debugging', 'Code Review', 'GitHub Actions', 'Docker', 'CI/CD'],
+    tags: ['Claude Code', 'Codex', 'T3 Code', 'Agent Skills', 'Vercel AI SDK', 'OpenAI API'],
   },
 ]
 
 export const experience = [
   {
     company: 'Independent Product Development',
-    role: 'Frontend-focused web apps, UX, and AI-assisted workflows',
+    role: 'Full-stack web, desktop and mobile apps',
     period: 'Apr 2025 - Present - Berlin',
   },
   {
     company: 'Lingoda',
-    role: 'Software Engineer - student learning and practice flows',
+    role: 'Software Engineer - student-facing learning features',
     period: 'Jun 2021 - Mar 2025 - Berlin',
   },
   {
     company: 'Quandoo',
-    role: 'Software Engineer - consumer booking, SEO, and performance',
-    period: 'Sep 2017 - Jan 2021 - Berlin',
+    role: 'Software Engineer - restaurant discovery and booking',
+    period: 'Sep 2017 - Feb 2021 - Berlin',
   },
   {
     company: 'Market Logic Software',
-    role: 'Web Developer - data visualization UIs',
+    role: 'Software Development - data visualization UIs',
     period: 'Mar 2016 - Jul 2016 - Berlin',
   },
   {
     company: 'AISA',
-    role: 'Software Developer - document management systems',
+    role: 'Software Developer - document management software',
     period: 'Apr 2015 - Jun 2015 - Mexico',
   },
 ]

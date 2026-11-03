@@ -11,7 +11,9 @@ export function checkPublic(root) {
   for (const name of allowed) {
     if (typeof name !== 'string' || name.startsWith('/') || name.includes('\\') || name.split('/').some((part) => !part || part === '.' || part === '..')) throw new Error('Invalid public file path');
     if (/jobcenter|almedia|baobab|kelea|(?:profile|dashboard)\.json|private|packet/i.test(name)) throw new Error('Private or obsolete file is not publishable: ' + name);
-    if (name.endsWith('.pdf') && name !== 'Carlos_Santisteban_CV.pdf') throw new Error('Only the default English CV is public');
+    // English CVs only: the primary download plus one file per extra variant published by Career Desk.
+    if (name.endsWith('.pdf') && name !== 'Carlos_Santisteban_CV.pdf' && !/^cv\/[a-z0-9-]+\.pdf$/.test(name)) throw new Error('Only English CVs are public');
+    if (/(^|[-_/])de([-_.]|$)|german|deutsch/i.test(name)) throw new Error('German CVs stay private: ' + name);
   }
   const actual = new Set();
   function walk(directory, prefix = '') {
