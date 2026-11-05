@@ -56,10 +56,10 @@ export const projects: Project[] = [
   {
     id: 'rankzap',
     title: 'RankZap',
-    description: 'Real-time, mobile-first ranked-voting app. Share a poll by link or QR code, drag the options into order, and watch live tallies by Borda count, Dowdall or Copeland.',
-    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind', 'PartyKit'],
+    description: 'Real-time, mobile-first ranked-voting app. Share a poll by link or QR code, drag the options into order, and watch live tallies by Borda count, Dowdall or Copeland. Each poll runs in its own Durable Object, and hosts pick a colour that floods the whole poll.',
+    tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind', 'Cloudflare Durable Objects', 'WebSockets'],
     screenshot: '/rankzap-screenshot.png',
-    screenshotAlt: 'RankZap poll results ranked by votes',
+    screenshotAlt: 'RankZap ballot being ranked, a closed poll with its winner, and the host view with live scores',
     liveUrl: 'https://rankzap.site',
     liveLabel: 'Live ->',
     githubUrl: 'https://github.com/santistebanc/rankzap',
