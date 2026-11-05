@@ -1,1 +1,65 @@
-{}
+{
+  "skills": [
+    {
+      "title": "Frontend",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "React",
+        "React Native (Expo)",
+        "Tauri",
+        "Redux",
+        "Zustand",
+        "TanStack Query",
+        "GraphQL / Apollo",
+        "Tailwind CSS",
+        "Design Systems",
+        "PWA",
+        "SSR"
+      ]
+    },
+    {
+      "title": "Backend & Data",
+      "tags": [
+        "Node.js",
+        "Hono",
+        "Express",
+        "Python",
+        "REST APIs / OpenAPI",
+        "WebSockets",
+        "PostgreSQL",
+        "SQLite",
+        "Cloudflare D1",
+        "Durable Objects",
+        "Supabase"
+      ]
+    },
+    {
+      "title": "Quality & Delivery",
+      "tags": [
+        "Vitest",
+        "Playwright",
+        "End-to-end Tests",
+        "Docker",
+        "GitHub Actions",
+        "Git",
+        "Monorepos",
+        "Sentry",
+        "Datadog"
+      ]
+    },
+    {
+      "title": "AI-Assisted Development",
+      "tags": [
+        "Claude Code",
+        "Codex",
+        "T3 Code",
+        "Agent Skills",
+        "Vercel AI SDK",
+        "OpenAI API"
+      ]
+    }
+  ]
+}
