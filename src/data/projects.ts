@@ -47,10 +47,12 @@ export const projects: Project[] = [
   {
     id: 'splitnext',
     title: 'Splitnext',
-    description: 'Offline-first shared-expense app for groups. Changes apply instantly, sync in real time across devices and wait on the device while offline. Each group lives in its own SQLite Durable Object, and expenses split equally, by shares or by exact amounts with fair rounding.',
+    description: 'Offline-first shared-expense app with group balances, searchable expenses, flexible splits and a settle-up plan. Changes apply instantly and sync across devices when connected. Activity keeps the history with safe undo. Each group runs in its own SQLite Durable Object, with fair rounding for equal, share-based and exact splits.',
     tech: ['React Native (Expo)', 'TypeScript', 'Hono', 'Cloudflare Durable Objects', 'D1', 'WebSockets'],
     screenshot: '/splitnext-screenshot.webp',
-    screenshotAlt: 'Splitnext group balances, an expense split by shares, and the settle-up plan',
+    screenshotAlt: 'Splitnext People tab with group balances beside an apartment expense split by shares',
+    liveUrl: 'https://splitnext-api-staging.santistebanc94.workers.dev/app',
+    liveLabel: 'Staging ->',
     githubUrl: 'https://github.com/santistebanc/splitnext',
   },
   {
