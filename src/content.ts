@@ -1,4 +1,4 @@
-// Career Desk publishes only reviewed public content here; private profile data stays outside this repo.
+// Merges reviewed public content overrides (src/career-content.json) into the base copy.
 import * as base from './base-content'
 import publicContent from './career-content.json'
 
