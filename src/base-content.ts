@@ -1,4 +1,4 @@
-// Public presentation copy and project data. Private facts and drafts live in Career Desk.
+// Public presentation copy and project data.
 export { featuredProject, projects, otherProjects, skills, experience } from './data/projects'
 
 export const person = {
