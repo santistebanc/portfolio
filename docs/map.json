@@ -1,0 +1,9 @@
+{
+  "parts": [
+    {"id": "sections", "name": "Site sections", "about": "Hero, work, method, route and contact", "paths": ["src", "index.html", "vite.config.ts"], "links": ["content"]},
+    {"id": "content", "name": "Content", "about": "Texts, career data and project cards", "paths": ["src/content.ts", "src/base-content.ts", "src/career-content.json", "src/data"], "links": []},
+    {"id": "tools", "name": "Content tools", "about": "Import career data and check the public build", "paths": ["tools"], "links": ["content"]},
+    {"id": "public", "name": "Public files", "about": "Images and files served as they are", "paths": ["public", "public-files.json"], "links": []},
+    {"id": "docs", "name": "Docs and setup", "about": "README and project settings", "paths": ["README.md", "package.json", "tsconfig.json", "tsconfig.app.json", "tsconfig.node.json"], "links": []}
+  ]
+}
