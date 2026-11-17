@@ -107,7 +107,7 @@ export const otherProjects: OtherProject[] = [
 export const skills = [
   {
     title: 'Frontend',
-    tags: ['JavaScript', 'TypeScript', 'React', 'React Native (Expo)', 'Tauri', 'Redux', 'Zustand', 'React Query', 'GraphQL / Apollo', 'Tailwind CSS', 'Design Systems', 'PWA', 'SSR'],
+    tags: ['JavaScript', 'TypeScript', 'React', 'React Native (Expo)', 'Tauri', 'Redux', 'Zustand', 'TanStack Query', 'GraphQL / Apollo', 'Tailwind CSS', 'Design Systems', 'PWA', 'SSR'],
   },
   {
     title: 'Backend & Data',
