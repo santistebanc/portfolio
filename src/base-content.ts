@@ -9,7 +9,7 @@ export const person = {
   github: 'https://github.com/santistebanc',
   githubLabel: 'github.com/santistebanc',
   tagline:
-    'Software engineer with 8+ years of experience building user-facing products end to end, from interface to API and data, focused on interfaces where functionality and ease of use matter as much as visual polish.',
+    'I build software from interface to API and data. For 8+ years, I’ve focused on making products that are easy to use and carefully designed.',
 }
 
 export const boardRows = [

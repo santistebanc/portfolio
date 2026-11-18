@@ -13,17 +13,15 @@ export function Work() {
           <p>{workIntro}</p>
         </SectionHead>
 
-        <article className="featured" data-reveal-item aria-labelledby="featured-title">
+        <article className="featured" aria-labelledby="featured-title">
           <Shot
             src={featuredProject.screenshot}
             alt={featuredProject.screenshotAlt}
             className="featured-shot"
+            eager
           />
           <div className="featured-body">
-            <p className="tag">
-              <span className="tag-index" aria-hidden="true">01</span>
-              Featured product
-            </p>
+            <p className="tag">Featured product</p>
             <h3 id="featured-title" className="featured-title">
               {featuredProject.title}
             </h3>
@@ -45,14 +43,9 @@ export function Work() {
             <li key={p.id} className="project" data-reveal-item style={{ ['--i' as string]: i }}>
               <article aria-labelledby={`p-${p.id}`}>
                 <Shot src={p.screenshot} alt={p.screenshotAlt} className="project-shot" />
-                <div className="project-meta">
-                  <span className="project-index" aria-hidden="true">
-                    {String(i + 2).padStart(2, '0')}
-                  </span>
-                  <h3 id={`p-${p.id}`} className="project-title">
-                    {p.title}
-                  </h3>
-                </div>
+                <h3 id={`p-${p.id}`} className="project-title">
+                  {p.title}
+                </h3>
                 <p className="project-desc">{p.description}</p>
                 <TechList items={p.tech} label={`${p.title} stack`} />
                 <div className="link-row link-row--text">

@@ -39,7 +39,7 @@ export function Hero() {
         </p>
 
         <h1 id="hero-title" className="hero-name">
-          <span>Carlos</span>
+          <span>Carlos</span>{' '}
           <span>Santisteban</span>
         </h1>
 
