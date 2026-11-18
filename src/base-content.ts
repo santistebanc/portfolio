@@ -62,7 +62,7 @@ export const highlights: Record<string, string> = {
 }
 
 export const education = {
-  title: 'Bachelor of IT Engineering',
+  title: 'IT Engineering',
   school: 'Tecnológico de Monterrey, Mexico',
   note: 'DAAD scholarship exchange semester in Informatics at Hochschule Furtwangen, Germany.',
 }
