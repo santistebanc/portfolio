@@ -6,7 +6,7 @@ export function Method() {
     <section className="section section--ink" id="ai-workflow" aria-labelledby="ai-workflow-title">
       <div className="wrap">
         <SectionHead id="ai-workflow" line="2" title="How I build with AI">
-          <p className="lede-strong">I decide what to build and review what ships.</p>
+          <p className="lede-strong">Practical assistance, deliberate review.</p>
           <p>{aiIntro}</p>
         </SectionHead>
 

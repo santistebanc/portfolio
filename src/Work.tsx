@@ -1,4 +1,4 @@
-import { featuredProject, otherProjects, projects, workIntro } from './content'
+import { featuredProject, otherProjects, projects } from './content'
 import { Arrow, ExternalLink, SectionHead, Shot, TechList } from './ui'
 
 /** Source data uses ASCII "->" in link labels; the redesign draws its own arrow. */
@@ -9,9 +9,7 @@ export function Work() {
   return (
     <section className="section" id="work" aria-labelledby="work-title">
       <div className="wrap">
-        <SectionHead id="work" line="1" title="Selected work">
-          <p>{workIntro}</p>
-        </SectionHead>
+        <SectionHead id="work" line="1" title="Selected work" />
 
         <article className="featured" data-reveal-item aria-labelledby="featured-title">
           <Shot

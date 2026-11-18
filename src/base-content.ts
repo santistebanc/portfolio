@@ -9,56 +9,53 @@ export const person = {
   github: 'https://github.com/santistebanc',
   githubLabel: 'github.com/santistebanc',
   tagline:
-    'I’ve built practice exercises for language students at Lingoda and restaurant search at Quandoo. These days I’m building apps of my own.',
+    'Software engineer with 8+ years building products end to end. I make the decisions about architecture, structure, features, flows and build with AI',
 }
 
 export const boardRows = [
-  { value: '8+', unit: 'Years', detail: 'Professional software development' },
-  { value: 'UI', unit: 'Development', detail: 'React and TypeScript' },
-  { value: 'API', unit: 'Development', detail: 'Node.js and Python' },
+  { value: '8+', unit: 'Years', detail: 'Professional product work' },
+  { value: 'UX', unit: 'Focus', detail: 'Usability-focused interfaces' },
+  { value: 'AI', unit: 'Workflows', detail: 'Practical developer productivity' },
 ] as const
 
-export const workIntro =
-  'These are apps I built independently. You can compare flight prices, find a film in its original language, split a bill, or run a ranked vote.'
-
 export const aiIntro =
-  'I use coding agents to compare approaches, build prototypes, and help write and test the code.'
+  'I use AI for research, planning, implementation, testing, verification and monitoring, and build AI features into apps, while bringing the architecture direction and usability judgment AI still lacks.'
 
 export const aiSteps = [
   {
     title: 'Research',
-    body: 'Compare tools and check where each option could cause problems.',
+    body: 'Explore the problem space, tool choices, frameworks, and architecture risks before committing to a direction.',
   },
   {
     title: 'Decide',
-    body: 'Decide what the feature should do and what can wait.',
+    body: 'Use structured grilling sessions to clarify behavior, scope, architecture, and tradeoffs.',
   },
   {
     title: 'Prototype',
-    body: 'Try a small, working version to see what the plan missed.',
+    body: 'Generate small interactive prototypes to test direction and uncover missing product details.',
   },
   {
-    title: 'Build one piece',
-    body: 'Build one part that works end to end so I can test and review it on its own.',
+    title: 'Build in slices',
+    body: 'Implement vertical slices, often TDD-oriented, so each slice can be reviewed, tested, and steered.',
   },
   {
-    title: 'Review the result',
-    body: 'Use the feature, read the code, and test what happens when things go wrong.',
+    title: 'Review and verify',
+    body: 'Inspect UX, architecture, code quality, correctness, types, edge cases, and product fit.',
   },
   {
     title: 'Ship and maintain',
-    body: 'Use agents to help with deployment and follow up on problems after release.',
+    body: 'Use AI support for deployment, CI, hosting, monitoring, analytics, and maintenance.',
   },
 ] as const
 
 /** Production highlights, condensed from the public CV. Keyed by company name in `experience`. */
 export const highlights: Record<string, string> = {
   'Independent Product Development':
-    'I build web, desktop and mobile apps, including apps that work offline and apps where several people can take part at once. I started using AI in 2025 and moved to an agent-driven workflow in 2026.',
+    'Complete applications across platforms: offline-first web apps and PWAs, real-time multi-user apps, desktop apps with Tauri and cross-platform apps with React Native (Expo), backed by Node.js and Python APIs, SQLite and Cloudflare. AI-assisted from 2025, fully agent-driven since 2026.',
   Lingoda:
-    'I owned the exercises students use after class, including quizzes, flashcards, matching and dialogues. I built the screens and the logic for scoring, hints, retries and progress.',
+    'Student-facing features of the language-learning platform in React, TypeScript and GraphQL. On the post-class practice feature, owned the quiz, flashcard, matching and dialogue interfaces and their session flow, scoring, retries, hints and progress.',
   Quandoo:
-    'I built search filters, campaign pages and booking widgets. I also worked on server-side rendering and SEO, and built a prototype to test the upgrade from React Router 3 to 5.',
+    'Built the restaurant discovery and booking portal in React and Redux: campaign pages, widgets, search filters, server-side rendering and SEO. Led the investigation into upgrading React Router v3 to v5 and built a working proof of concept.',
   'Market Logic Software':
     'React UI components, D3.js data visualizations and dynamic widgets for a market intelligence platform.',
   AISA: 'C# / WPF forms for government document-management software over SQL.',
@@ -71,8 +68,8 @@ export const education = {
 }
 
 export const cta = {
-  heading: 'Get in touch',
-  body: 'I’m based in Berlin and available to start immediately for full-time or freelance work.',
+  heading: "Let's build something great together.",
+  body: 'Open to full-time roles and exciting freelance work. Based in Berlin, available immediately.',
 }
 
 export const cvMain = { label: 'Download CV', href: '/Carlos_Santisteban_CV.pdf' }

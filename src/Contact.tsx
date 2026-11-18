@@ -44,7 +44,7 @@ export function Contact() {
           <p className="contact-body">{cta.body}</p>
           <div className="link-row">
             <a href={`mailto:${person.email}`} className="btn btn-ink">
-              Email me <Arrow />
+              Get in touch <Arrow />
             </a>
             <ExternalLink href={person.github} className="btn btn-outline-ink">
               GitHub
