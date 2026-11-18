@@ -5,7 +5,6 @@ import publicContent from './career-content.json'
 const content = publicContent as Partial<typeof base>
 export const person = { ...base.person, ...content.person }
 export const boardRows = content.boardRows ?? base.boardRows
-export const workIntro = content.workIntro ?? base.workIntro
 export const aiIntro = content.aiIntro ?? base.aiIntro
 export const aiSteps = content.aiSteps ?? base.aiSteps
 export const highlights = { ...base.highlights, ...content.highlights }

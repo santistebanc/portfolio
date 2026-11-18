@@ -9,7 +9,7 @@ export const person = {
   github: 'https://github.com/santistebanc',
   githubLabel: 'github.com/santistebanc',
   tagline:
-    'Software engineer with 8+ years of experience building user-facing products end to end, from interface to API and data, focused on interfaces where functionality and ease of use matter as much as visual polish.',
+    'Software engineer with 8+ years building products end to end. I make the decisions about architecture, structure, features, flows and build with AI',
 }
 
 export const boardRows = [
@@ -17,9 +17,6 @@ export const boardRows = [
   { value: 'UX', unit: 'Focus', detail: 'Usability-focused interfaces' },
   { value: 'AI', unit: 'Workflows', detail: 'Practical developer productivity' },
 ] as const
-
-export const workIntro =
-  'Independent web, desktop and mobile apps that show how I approach usable interfaces, data and sync, real-time features, and AI-assisted development. My production experience comes from team work at Lingoda, Quandoo, Market Logic, and AISA.'
 
 export const aiIntro =
   'I use AI for research, planning, implementation, testing, verification and monitoring, and build AI features into apps, while bringing the architecture direction and usability judgment AI still lacks.'
@@ -65,13 +62,13 @@ export const highlights: Record<string, string> = {
 }
 
 export const education = {
-  title: 'Bachelor of IT Engineering',
+  title: 'IT Engineering',
   school: 'Tecnológico de Monterrey, Mexico',
   note: 'DAAD scholarship exchange semester in Informatics at Hochschule Furtwangen, Germany.',
 }
 
 export const cta = {
-  heading: "Let's build something great together.",
+  heading: 'Get in touch',
   body: 'Open to full-time roles and exciting freelance work. Based in Berlin, available immediately.',
 }
 
