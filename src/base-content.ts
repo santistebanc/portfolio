@@ -68,7 +68,7 @@ export const education = {
 }
 
 export const cta = {
-  heading: "Let's build something great together.",
+  heading: 'Get in touch',
   body: 'Open to full-time roles and exciting freelance work. Based in Berlin, available immediately.',
 }
 
