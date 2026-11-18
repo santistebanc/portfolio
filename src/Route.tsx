@@ -18,26 +18,21 @@ export function Route() {
   return (
     <section className="section" id="about" aria-labelledby="about-title">
       <div className="wrap">
-        <SectionHead id="about" line="3" title="Hands-on software engineer" />
+        <SectionHead id="about" line="3" title="About me" />
 
         <div className="route-grid">
           <div className="about" data-reveal-item>
             <p className="about-lead">
-              I'm a software engineer based in Berlin with 8+ years of professional experience
-              building user-facing web applications, especially React/TypeScript product UI, forms,
-              search and booking flows, interactive components, and polished product UX.
+              Most of my professional work has been on the frontend, using React and TypeScript.
+              I’ve built forms, search filters, restaurant booking flows, and exercises for language students.
             </p>
             <p>
-              My strongest work sits where <strong>frontend craft, product thinking, and practical
-              full-stack ownership</strong> meet: shaping a feature with product/design, building the
-              interface, integrating APIs and state, testing, releasing, and iterating until it feels
-              useful.
+              I work with product and design to decide how a feature should work. I like to
+              <strong> take it through to release</strong>, from building the screens and connecting the API
+              to testing how people will use it.
             </p>
             <p>
-              My production background includes student learning flows at Lingoda and consumer
-              booking, SEO, performance, and migration work at Quandoo. My independent apps are
-              portfolio examples of modern JavaScript/TypeScript product development, practical
-              full-stack delivery, and AI-assisted development workflows.
+              For my own apps, I also build the APIs, work on sync, and handle releases.
             </p>
 
             <dl className="facts">

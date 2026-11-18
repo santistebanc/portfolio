@@ -25,7 +25,7 @@ export interface OtherProject {
 export const featuredProject = {
   title: 'Flyscan - Flight Metasearch',
   description:
-    'Flight metasearch app for the web and desktop (Windows, macOS and Linux). It searches several sources at once and merges the same flight from different sellers into one row, so price differences show. A Python service with a built-in queue keeps results in SQLite, so searches answer instantly from stored data and fetch only what is missing. The web version runs on flyscan.site; the desktop app adds more sources and signed automatic updates.',
+    'Compare prices for the same flight in one row, even when several sellers list it. Flyscan reuses results it already has and fetches what’s missing. It runs in the browser and on Windows, macOS and Linux. The desktop app checks more sources and uses signed automatic updates.',
   tech: ['Python', 'Flask', 'SQLite', 'React', 'TypeScript', 'Tauri', 'Docker'],
   screenshot: '/flyscan-screenshot.webp',
   screenshotAlt: 'Flyscan round-trip results with flight timelines and the selected flight in a side panel',
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     id: 'ovberlin',
     title: 'OV Berlin',
-    description: 'Public PWA for finding original-version and subtitled screenings in Berlin cinemas. A Node.js pipeline merges two listing sources, resolves each film and cinema, and adds ratings, trailers and maps; the app offers fuzzy search, filters, grid and stacked showtime views, and works offline.',
+    description: 'Find films showing in their original language or with subtitles in Berlin. The app combines showtimes from two sources, matches films and cinemas across them, and adds ratings, trailers and maps. You can browse saved listings offline.',
     tech: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Node.js', 'PWA', 'GitHub Actions'],
     screenshot: '/ovberlin-screenshot.webp',
     screenshotAlt: 'OV Berlin film listings with posters, ratings and screening formats',
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     id: 'splitnext',
     title: 'Splitnext',
-    description: 'Offline-first shared-expense app with group balances, searchable expenses, flexible splits and a settle-up plan. Changes apply instantly and sync across devices when connected. Activity keeps the history with safe undo. Each group runs in its own SQLite Durable Object, with fair rounding for equal, share-based and exact splits.',
+    description: 'Split a bill evenly, by shares, or by entering exact amounts. Splitnext shows who owes whom and keeps working offline. Changes sync when you reconnect, and you can undo edits from the activity history.',
     tech: ['React Native (Expo)', 'TypeScript', 'Hono', 'Cloudflare Durable Objects', 'D1', 'WebSockets'],
     screenshot: '/splitnext-screenshot.webp',
     screenshotAlt: 'Splitnext People tab with group balances beside an apartment expense split by shares',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
   {
     id: 'rankzap',
     title: 'RankZap',
-    description: 'Real-time, mobile-first ranked-voting app. Share a poll by link or QR code, drag the options into order, and watch live tallies by Borda count, Dowdall or Copeland. Each poll runs in its own Durable Object, and hosts pick a colour that floods the whole poll.',
+    description: 'Share a poll by link or QR code and let people drag the options into their preferred order. Results update as votes come in. Hosts can pick the poll’s colour and choose how to count votes, using Borda, Dowdall or Copeland.',
     tech: ['React', 'TypeScript', 'dnd-kit', 'Tailwind', 'Cloudflare Durable Objects', 'WebSockets'],
     screenshot: '/rankzap-screenshot.png',
     screenshotAlt: 'RankZap ballot being ranked, a closed poll with its winner, and the host view with live scores',
